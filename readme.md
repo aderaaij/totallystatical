@@ -1,5 +1,10 @@
 ## Totallystatical site generator
 
-* Susy v2
-* Normalize
-* Breakpoint(http://breakpoint-sass.com/)
+
+'npm install'
+
+'bower install'
+
+* Susy v2 ( http://susy.oddbird.net/ )
+* Normalize ( https://github.com/JohnAlbin/normalize-scss )
+* Breakpoint ( http://breakpoint-sass.com/ ) 
