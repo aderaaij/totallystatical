@@ -64,7 +64,7 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-  return gulp.src([src_path+'assets/js/libs/*.js', src_path+'assets/js/*.js'])
+  return gulp.src([src_path+'assets/js/vendor/*.js', src_path+'assets/js/*.js'])
     .pipe(plumber({
       errorHandler: onError
     }))
