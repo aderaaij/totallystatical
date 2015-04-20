@@ -1,5 +1,5 @@
-## Totallystatical static site generator
+## Totallystatical site generator
 
-Requirements: 
-
-* Node
+* Susy v2
+* Normalize
+* Breakpoint(http://breakpoint-sass.com/)
