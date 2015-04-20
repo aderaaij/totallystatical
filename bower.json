@@ -1,0 +1,20 @@
+{
+  "name": "Totallystatical",
+  "version": "1.0.0",
+  "authors": [
+    "Arden de Raaij <a.de.raaij@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "latest",
+    "susy": "latest",
+    "compass-breakpoint": "latest"
+  }
+}
