@@ -13,7 +13,6 @@ var
   jshint          = require('gulp-jshint'),
   uglify          = require('gulp-uglify'),
   imagemin        = require('gulp-imagemin'),
-  spritesmith     = require('gulp.spritesmith'),
   concat          = require('gulp-concat'),
   rename          = require('gulp-rename'),
   notify          = require('gulp-notify'),
