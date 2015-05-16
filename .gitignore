@@ -1,5 +1,5 @@
 /node_modules
 /bower_components
-/app/html/build
+/app/build
 .sass-cache
 .DS_Store
