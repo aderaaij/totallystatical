@@ -5,7 +5,7 @@ This package requires the following
 
 ### Requirements:
 
-* Node ( https://nodejs.org/download/ )
+* [Node]( https://nodejs.org/download/ )
 
 ### Installation
 
