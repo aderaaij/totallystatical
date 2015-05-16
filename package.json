@@ -44,6 +44,7 @@
     "gulp-jade-inheritance": "^0.5.1",
     "gulp-cached": "^1.1.0",
     "gulp-if": "^1.2.5",
-    "gulp-filter": "^2.0.2"
+    "gulp-filter": "^2.0.2",
+    "gulp-changed": "^1.2.1"
   }
 }
