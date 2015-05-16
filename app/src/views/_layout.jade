@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+	block vars
+	head
+		block title
+			title #{pageTitle} - My Static Site
+		link(rel='stylesheet', href='assets/css/screen.min.css')
+	body(class='#{bodyClass}')
+
+			header.site-header
+				.container
+					block header
+
+			block content
+				h1 welcome
+
+		script(src='assets/js/script.js')
