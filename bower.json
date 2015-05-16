@@ -1,6 +1,6 @@
 {
   "name": "Totallystatical",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "authors": [
     "Arden de Raaij <a.de.raaij@gmail.com>"
   ],
@@ -8,9 +8,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
     "normalize-scss": "latest",

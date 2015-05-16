@@ -1,5 +1,29 @@
 {
+  "name": "totallystatical",
+  "version": "0.1.0",
+  "description": "A static site generator based on Gulp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aderaaij/totallystatical"
+  },
+  "keywords": [
+    "gulp",
+    "static",
+    "site",
+    "generator"
+  ],
+  "author": "Arden de Raaij <mail@arden.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aderaaij/totallystatical/issues"
+  },
+  "homepage": "https://github.com/aderaaij/totallystatical",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  },
   "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-load-plugins": "^0.10.0",
     "gulp-sass": "^1.2.4",
     "gulp-jade": "^0.10.0",
     "gulp-autoprefixer": "^2.0.0",
@@ -10,11 +34,16 @@
     "gulp-notify": "^2.2.0",
     "gulp-concat": "^2.4.3",
     "gulp-rename": "^1.2.0",
-    "gulp-cache": "^0.2.4",
+    "gulp-cache": "^0.2.9",
     "gulp-livereload": "^3.2.0",
     "gulp-plumber": "^0.6.6",
     "gulp-util": "^3.0.2",
     "del": "^1.1.1",
-    "gulp-inline-css": "^1.0.1"
+    "gulp-inline-css": "^1.0.1",
+    "gulp-bower": "0.0.10",
+    "gulp-jade-inheritance": "^0.5.1",
+    "gulp-cached": "^1.1.0",
+    "gulp-if": "^1.2.5",
+    "gulp-filter": "^2.0.2"
   }
 }
