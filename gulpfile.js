@@ -29,6 +29,15 @@ gulp.task('bower', function() {
     .pipe(gulp.dest('./bower_components'));
 });
 
+// Local server
+gulp.task('connect', function() {
+  plugins.connect.server({
+    root: 'app/build',
+    port: 9021,
+    livereload: true,
+  });
+});
+
 // Execute Jade Templates
 gulp.task('templates', function() {
   return gulp.src(src_path+'**/*.jade')
@@ -57,8 +66,11 @@ gulp.task('templates', function() {
     // Distribute to build path
     .pipe(gulp.dest(build_path))
 
+    // Livereload
+    .pipe(plugins.connect.reload())
+
     // Show notification
-    .pipe(plugins.notify({ message: 'templates task complete' }));
+    .pipe(plugins.gulpIf(global.isWatching, plugins.notify({ message: 'templates task complete' })));
 });
 
 // Styles
@@ -86,8 +98,11 @@ gulp.task('styles', function() {
     // Distribute to build path
     .pipe(gulp.dest(build_path + 'assets/css/'))
 
+    // Livereload
+    .pipe(plugins.connect.reload())
+
     // Show notification
-    .pipe(plugins.notify({ message: 'Styles task complete' }));
+    .pipe(plugins.gulpIf(global.isWatching, plugins.notify({ message: 'Styles task complete' })));
 });
 
 // Scripts
@@ -116,8 +131,11 @@ gulp.task('scripts', function() {
     // Distribute to build
     .pipe(gulp.dest(build_path + 'assets/js/'))
 
+    // Livereload
+    .pipe(plugins.connect.reload())
+
     // Show notifcation
-    .pipe(plugins.notify({ message: 'Scripts task complete' }));
+    .pipe(plugins.gulpIf(global.isWatching, plugins.notify({ message: 'Scripts task complete' })));
 });
 
 // Images
@@ -134,8 +152,11 @@ gulp.task('images', function() {
     // Distribute to build path
     .pipe(gulp.dest(build_path+'assets/img/'))
 
+    // Livereload
+    .pipe(plugins.connect.reload())
+
     // Show notification
-    .pipe(plugins.notify({ message: 'Images task complete' }));
+    .pipe(plugins.gulpIf(global.isWatching, plugins.notify({ message: 'Images task complete' })));
 });
 
 // Clear (image) cache
@@ -151,7 +172,13 @@ gulp.task('clean', function(cb) {
 // Copy font files, clean before copy
 gulp.task('copyfonts', ['clean'], function() {
   gulp.src(src_path+'assets/fonts/**/*')
-  .pipe(gulp.dest(build_path+'assets/fonts'));
+
+  // Distribute to build path
+  .pipe(gulp.dest(build_path+'assets/fonts'))
+
+  // livereload
+  .pipe(plugins.connect.reload());
+
 });
 
 // Cleans build folder if present and builds
@@ -165,7 +192,7 @@ gulp.task('setWatch', function() {
 });
 
 // Watch
-gulp.task('watch', ['setWatch', 'templates'], function() {
+gulp.task('watch', ['setWatch', 'templates', 'connect'], function() {
 
   // Watch .scss files
   gulp.watch(src_path+'assets/sass/**/*.scss', ['styles']);
@@ -183,9 +210,9 @@ gulp.task('watch', ['setWatch', 'templates'], function() {
   gulp.watch(src_path+'assets/fonts/**/*', ['copyfonts']);
 
   // Create LiveReload server
-  plugins.livereload.listen();
+  // plugins.livereload.listen();
 
   // Watch any files in build directory, reload on change
-  gulp.watch([build_path+'/**/**/*']).on('change', plugins.livereload.changed);
+  // gulp.watch([build_path+'/**/**/*']).on('change', plugins.livereload.changed);
 
 });
