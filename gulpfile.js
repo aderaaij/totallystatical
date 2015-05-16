@@ -4,41 +4,28 @@ var
   src_path        = app_path + 'src/',
   build_path      = app_path + 'build/';
 
-// Gulp requirements
+// Requirements, gulp plugins loaded  with gulp-load-plugins
 var
-  gulp            = require('gulp'),
-  sass            = require('gulp-sass'),
-  jade            = require('gulp-jade'),
-  jadeInheritance = require('gulp-jade-inheritance'),
-  autoprefixer    = require('gulp-autoprefixer'),
-  minifycss       = require('gulp-minify-css'),
-  jshint          = require('gulp-jshint'),
-  uglify          = require('gulp-uglify'),
-  imagemin        = require('gulp-imagemin'),
-  concat          = require('gulp-concat'),
-  rename          = require('gulp-rename'),
-  notify          = require('gulp-notify'),
-  cache           = require('gulp-cache'),
-  cached          = require('gulp-cached'),
-  livereload      = require('gulp-livereload'),
-  plumber         = require('gulp-plumber'),
-  gutil           = require('gulp-util'),
-  changed         = require('gulp-changed'),
-  gulpif          = require('gulp-if'),
-  filter          = require('gulp-filter'),
-  del             = require('del');
-  bower           = require('gulp-bower');
+  gulp                = require('gulp'),
+  del                 = require('del'),
+  gulpLoadPlugins     = require('gulp-load-plugins'),
+  plugins             = gulpLoadPlugins({
+    rename: {
+        'gulp-if' : 'gulpIf',
+        'gulp-minify-css': 'minifyCss'
+      }
+    });
 
 // Don't break watch on error
 var onError = function (err) {
-  gutil.beep();
+  plugins.gulputil.beep();
   console.log(err);
   this.emit('end');
 };
 
 // Install bower components in specified folder
 gulp.task('bower', function() {
-  return bower()
+  return plugins.bower()
     .pipe(gulp.dest('./bower_components'));
 });
 
@@ -46,65 +33,65 @@ gulp.task('bower', function() {
 gulp.task('templates', function() {
   return gulp.src(src_path+'**/*.jade')
     // Catch errors
-    .pipe(plumber({errorHandler: onError}))
+    .pipe(plugins.plumber({errorHandler: onError}))
 
     // Only build changed files
-    .pipe(changed(build_path, {extension: '.html'}))
+    .pipe(plugins.changed(build_path, {extension: '.html'}))
 
-    .pipe(gulpif(global.isWatching, cached('jade')))
+    .pipe(plugins.gulpIf(global.isWatching, plugins.cached('jade')))
 
     // Watch partials for change
-    .pipe(jadeInheritance({basedir: src_path}))
+    .pipe(plugins.jadeInheritance({basedir: src_path}))
 
     // Ignore build of files starting with _
-    .pipe(filter(function (file) {
+    .pipe(plugins.filter(function (file) {
       return !/\/_/.test(file.path) && !/^_/.test(file.relative);
     }))
 
     // Output Jade
-    .pipe(jade({pretty: true}))
+    .pipe(plugins.jade({pretty: true}))
 
     // Catch errors
-    .pipe(plumber({errorHandler: onError}))
+    .pipe(plugins.plumber({errorHandler: onError}))
 
     // Distribute to build path
     .pipe(gulp.dest(build_path))
 
     // Show notification
-    .pipe(notify({ message: 'templates task complete' }));
+    .pipe(plugins.notify({ message: 'templates task complete' }));
 });
 
 // Styles
-gulp.task('styles', ['bower'], function() {
+gulp.task('styles', function() {
   return gulp.src(src_path+'assets/sass/screen.scss')
 
     // Catch errors
-    .pipe(plumber({errorHandler: onError}))
+    .pipe(plugins.plumber({errorHandler: onError}))
 
     // Specify output style
-    .pipe(sass({outputStyle: 'nested'}))
+    .pipe(plugins.sass({outputStyle: 'nested'}))
 
     // Autoprefixer
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
 
     // Distribute to build
-    .pipe(gulp.dest(build_path+'assets/css/'))
+    .pipe(gulp.dest(build_path + 'assets/css/'))
 
     // Add a .min version
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(plugins.rename({ suffix: '.min' }))
 
     // Minify .min version
-    .pipe(minifycss())
+    .pipe(plugins.minifyCss())
 
     // Distribute to build path
-    .pipe(gulp.dest(build_path+'assets/css/'))
+    .pipe(gulp.dest(build_path + 'assets/css/'))
 
     // Show notification
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(plugins.notify({ message: 'Styles task complete' }));
 });
 
 // Scripts
-gulp.task('scripts', ['bower'], function() {
+gulp.task('scripts', function() {
   return gulp.src([
       src_path+'assets/js/vendor/*.js',
       src_path+'assets/js/partials/*.js',
@@ -112,25 +99,25 @@ gulp.task('scripts', ['bower'], function() {
     ])
 
     // Catch Errors
-    .pipe(plumber({errorHandler: onError}))
+    .pipe(plugins.plumber({errorHandler: onError}))
 
     // Concatinate in one file
-    .pipe(concat('script.js'))
+    .pipe(plugins.concat('script.js'))
 
     // Distribute to build
     .pipe(gulp.dest(build_path + 'assets/js/'))
 
     // Add a .min version
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(plugins.rename({ suffix: '.min' }))
 
     // Minify with jsUglify
-    .pipe(uglify())
+    .pipe(plugins.uglify())
 
     // Distribute to build
     .pipe(gulp.dest(build_path + 'assets/js/'))
 
     // Show notifcation
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(plugins.notify({ message: 'Scripts task complete' }));
 });
 
 // Images
@@ -138,7 +125,7 @@ gulp.task('images', function() {
   return gulp.src(src_path+'assets/img/**/**/*')
 
     // Image optimization
-    .pipe(cache(imagemin({
+    .pipe(plugins.cache(plugins.imagemin({
       optimizationLevel: 3,
       progressive: true,
       interlaced: true
@@ -148,12 +135,12 @@ gulp.task('images', function() {
     .pipe(gulp.dest(build_path+'assets/img/'))
 
     // Show notification
-    .pipe(notify({ message: 'Images task complete' }));
+    .pipe(plugins.notify({ message: 'Images task complete' }));
 });
 
 // Clear (image) cache
 gulp.task('clear', function (done) {
-  return cache.clearAll(done);
+  return plugins.cache.clearAll(done);
 });
 
 // Clean out build
@@ -167,12 +154,12 @@ gulp.task('copyfonts', ['clean'], function() {
   .pipe(gulp.dest(build_path+'assets/fonts'));
 });
 
-// Run clean task before default task
-gulp.task('default', ['clean'], function() {
-  gulp.start('bower', 'templates', 'styles', 'scripts', 'images', 'copyfonts');
+// Cleans build folder if present and builds
+gulp.task('default', ['clean', 'bower'], function() {
+  gulp.start( 'templates', 'styles', 'scripts', 'images', 'copyfonts' );
 });
 
-// Set watch task for template caching and
+// Set global watch var to true
 gulp.task('setWatch', function() {
   global.isWatching = true;
 });
@@ -196,9 +183,9 @@ gulp.task('watch', ['setWatch', 'templates'], function() {
   gulp.watch(src_path+'assets/fonts/**/*', ['copyfonts']);
 
   // Create LiveReload server
-  livereload.listen();
+  plugins.livereload.listen();
 
   // Watch any files in build directory, reload on change
-  gulp.watch([build_path+'/**/**/*']).on('change', livereload.changed);
+  gulp.watch([build_path+'/**/**/*']).on('change', plugins.livereload.changed);
 
 });
