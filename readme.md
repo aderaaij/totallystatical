@@ -13,11 +13,18 @@ Run npm install:
 
 `npm install`
 
-Run the default gulp task:
+Run the default gulp task to install all bower components and run build taks for the first time:
 
 `gulp`
 
+Run Gulp watch to start webserver, watch files and livereload
+
+`gulp watch`
+
 ### Contains:
-* [Susy v2]( http://susy.oddbird.net/ )
-* [Normalize]( https://github.com/JohnAlbin/normalize-scss )
-* [Breakpoint]( http://breakpoint-sass.com/ )
+* Node Sass Parser with:
+  * [Susy v2]( http://susy.oddbird.net/ )
+  * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
+  * [Breakpoint]( http://breakpoint-sass.com/ )
+* Connect server
+* Livereload
