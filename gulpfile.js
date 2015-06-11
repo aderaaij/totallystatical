@@ -12,13 +12,14 @@ var
   plugins             = gulpLoadPlugins({
     rename: {
         'gulp-if' : 'gulpIf',
-        'gulp-minify-css': 'minifyCss'
+        'gulp-minify-css': 'minifyCss',
+        'gulp-util': 'gulpUtil'
       }
     });
 
 // Don't break watch on error
 var onError = function (err) {
-  plugins.gulputil.beep();
+  plugins.gulpUtil.beep();
   console.log(err);
   this.emit('end');
 };
