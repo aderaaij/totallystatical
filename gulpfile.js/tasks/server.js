@@ -1,10 +1,10 @@
 var
-  gulp     = require('gulp'),
-  express  = require('express'),
-  config   = require('../config/server'),
-  compress = require('compression'),
-  logger   = require('morgan'),
-  open     = require('open'),
+  gulp                = require('gulp'),
+  express             = require('express'),
+  config              = require('../config/server'),
+  compress            = require('compression'),
+  logger              = require('morgan'),
+  open                = require('open'),
   plugins             = require('gulp-load-plugins')();
 
 gulp.task('server', function() {

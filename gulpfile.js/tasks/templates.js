@@ -40,7 +40,7 @@ gulp.task('templates', function() {
 
   // Livereload
   // .pipe(plugins.connect.reload())
-  .pipe(browserSync.reload({stream:true}))
+  // .pipe(browserSync.reload({stream:true}))
 
   // Show notification
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
