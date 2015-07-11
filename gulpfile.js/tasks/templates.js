@@ -45,3 +45,5 @@ gulp.task('templates', function() {
   // Show notification
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
 });
+
+gulp.task('jade-watch', ['templates'], browserSync.reload);

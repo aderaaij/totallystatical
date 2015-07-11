@@ -1,16 +1,17 @@
 var
+  browserSync         = require('browser-sync'),
   gulp                    = require('gulp'),
   config                  = require('../config/index'),
   templates               = require('../config/templates'),
   styles                  = require('../config/styles'),
   plugins                 = require('gulp-load-plugins')();
 
-gulp.task('watch', ['templates', 'browserSync'], function() {
+gulp.task('watch', ['setWatch', 'templates'], function() {
 
   // Watch all the things with the gulp-watch plugins
   plugins.watch(templates.source, function() { gulp.start('templates'); });
   plugins.watch(styles.base, function() { gulp.start('styles'); });
-
+  browserSync({server: config.buildPath});
   // Start livereload listener
   // plugins.livereload.listen();
 
