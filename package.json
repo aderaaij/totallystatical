@@ -1,6 +1,6 @@
 {
   "name": "totallystatical",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A static site generator based on Gulp",
   "repository": {
     "type": "git",
@@ -45,6 +45,12 @@
     "gulp-connect": "^2.2.0",
     "require-dir": "^0.3.0",
     "gulp-watch": "^4.2.4",
-    "gulp-jade": "^1.0.1"
+    "gulp-jade": "^1.0.1",
+    "browser-sync": "^2.7.13",
+    "express": "^4.13.1",
+    "morgan": "^1.6.1",
+    "open": "0.0.5",
+    "compression": "^1.5.1",
+    "gulp-sequence": "^0.4.0"
   }
 }

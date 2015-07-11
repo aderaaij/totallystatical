@@ -6,7 +6,7 @@ module.exports = {
     config.assetsPath+'js/partials/*.js',
     config.assetsPath+'js/*.js'
   ],
-  dest: config.buildPath+'js',
+  dest: config.buildPath+'assets/js',
   concat: 'scripts.js',
   rename: {
     suffix: '.min'
