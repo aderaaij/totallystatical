@@ -2,6 +2,6 @@ var config = require('./')
 
 module.exports = {
   source: config.sourcePath+'**/*.jade',
-  dest: './app/build/',
+  dest: config.buildPath,
   base: config.sourcePath
 }
