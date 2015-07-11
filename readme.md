@@ -1,4 +1,4 @@
-# TotallyStatical static site generator
+# TotallyStatical site generator
 
 TotallyStatical is a barebone static site generator using Gulp to do all the heavy lifting.
 
