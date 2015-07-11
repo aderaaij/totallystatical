@@ -28,7 +28,6 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(config.dest))
 
     // Livereload connect
-    // .pipe(plugins.connect.reload())
     .pipe(browserSync.reload({stream:true}))
 
     // Show notification

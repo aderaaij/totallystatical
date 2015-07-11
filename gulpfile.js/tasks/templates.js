@@ -38,10 +38,6 @@ gulp.task('templates', function() {
   // Distribute to build path
   .pipe(gulp.dest(config.dest))
 
-  // Livereload
-  // .pipe(plugins.connect.reload())
-  // .pipe(browserSync.reload({stream:true}))
-
   // Show notification
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
 });
