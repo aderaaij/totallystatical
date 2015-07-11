@@ -11,8 +11,10 @@ gulp.task('templates', function() {
     // Only build changed files
     .pipe(plugins.changed(config.dest, {extension: '.html'}))
 
+    // Catch errors
     .on('error', errorHandler)
 
+    // Cache templates if watching
     .pipe(plugins.if(global.isWatching, plugins.cached('jade')))
 
     // Watch partials for change
@@ -22,6 +24,9 @@ gulp.task('templates', function() {
     .pipe(plugins.filter(function (file) {
       return !/\/_/.test(file.path) && !/^_/.test(file.relative);
     }))
+
+    // Catch errors
+    .on('error', errorHandler)
 
     // Output Jade
     .pipe(plugins.jade({pretty: true}))

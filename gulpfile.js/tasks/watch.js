@@ -2,12 +2,14 @@ var
   gulp                    = require('gulp'),
   config                  = require('../config/index'),
   templates               = require('../config/templates'),
+  styles                  = require('../config/styles'),
   plugins                 = require('gulp-load-plugins')();
 
-gulp.task('watch', function() {
+gulp.task('watch', ['bower', 'templates'], function() {
 
   // Watch all the things with the gulp-watch plugins
   plugins.watch(templates.source, function() { gulp.start('templates'); });
+  plugins.watch(styles.base, function() { gulp.start('styles'); });
 
 
   // Start livereload listener
