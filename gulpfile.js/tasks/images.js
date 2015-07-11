@@ -16,6 +16,8 @@ gulp.task('images', function() {
     // Distribute to build path
     .pipe(gulp.dest(config.dest))
 
+    .pipe(browserSync.reload({stream:true}))
+
     // Show notification
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })));
 });

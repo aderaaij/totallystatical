@@ -1,4 +1,5 @@
 var
+  browserSync         = require('browser-sync'),
   gulp                = require('gulp'),
   plugins             = require('gulp-load-plugins')(),
   config              = require('../config/styles'),
@@ -27,7 +28,8 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(config.dest))
 
     // Livereload connect
-    .pipe(plugins.connect.reload())
+    // .pipe(plugins.connect.reload())
+    .pipe(browserSync.reload({stream:true}))
 
     // Show notification
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })));

@@ -15,6 +15,8 @@ gulp.task('scripts-standalone', function() {
   // Distribute to build
   .pipe(gulp.dest(config.dest))
 
+  .pipe(browserSync.reload({stream:true}))
+
   // If is watching
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Standalone scripts task complete' })));
 });

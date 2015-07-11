@@ -26,7 +26,8 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest(config.dest))
 
   // Livereload
-  .pipe(plugins.connect.reload())
+  // .pipe(plugins.connect.reload())
+  .pipe(browserSync.reload({stream:true}))
 
   // Show notifcation
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Scripts task complete' })));
