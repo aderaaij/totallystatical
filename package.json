@@ -45,9 +45,10 @@
     "gulp-sequence": "^0.4.0"
   },
   "devDependencies": {
+    "compression": "^1.5.1",
     "express": "^4.13.1",
+    "gulp-svg-sprite": "^1.2.8",
     "morgan": "^1.6.1",
-    "open": "0.0.5",
-    "compression": "^1.5.1"
+    "open": "0.0.5"
   }
 }
