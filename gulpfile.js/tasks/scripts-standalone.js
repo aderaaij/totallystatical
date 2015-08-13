@@ -5,7 +5,7 @@ var
   config              = require('../config/scripts-standalone')
 
 // Copy files
-gulp.task('scripts-standalone', function() {
+gulp.task('scripts:standalone', function() {
 
   // Standalone scripts
   gulp.src(config.source)

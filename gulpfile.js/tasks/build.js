@@ -10,7 +10,7 @@ gulp.task('build', function(cb) {
     ],
     [
       'images',
-      'scripts-standalone'
+      'scripts:standalone'
     ],
     [
       'styles',
