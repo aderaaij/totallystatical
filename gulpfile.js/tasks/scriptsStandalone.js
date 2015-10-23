@@ -2,7 +2,7 @@ var
   browserSync         = require('browser-sync'),
   gulp                = require('gulp'),
   plugins             = require('gulp-load-plugins')(),
-  config              = require('../config/scripts-standalone')
+  config              = require('../config/scriptsStandalone')
 
 // Copy files
 gulp.task('scripts:standalone', function() {

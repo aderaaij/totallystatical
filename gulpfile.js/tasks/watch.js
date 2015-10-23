@@ -11,7 +11,7 @@ var
 gulp.task('watch', ['browserSync','setWatch', 'templates'], function() {
 
   // Watch all the things with the gulp-watch plugins
-  plugins.watch(templates.source, function() { gulp.start('jade-watch'); });
+  plugins.watch(templates.source, function() { gulp.start('jade:watch'); });
   plugins.watch(styles.base, function() { gulp.start('styles'); });
   plugins.watch(scripts.source, function() { gulp.start('scripts'); });
   plugins.watch(images.source, function() { gulp.start('images'); });

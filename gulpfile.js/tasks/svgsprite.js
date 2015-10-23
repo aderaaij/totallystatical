@@ -1,7 +1,7 @@
 var
   gulp                = require('gulp'),
   plugins             = require('gulp-load-plugins')(),
-  config              = require('../config/svgsprite');
+  config              = require('../config/svgSprite');
 
 gulp.task('svgsprite', function() {
   gulp.src(config.source)
