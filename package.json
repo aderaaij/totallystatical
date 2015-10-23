@@ -47,7 +47,7 @@
   "devDependencies": {
     "compression": "^1.6.0",
     "express": "^4.13.1",
-    "gulp-svg-sprite": "^1.2.11",
+    "gulp-svgstore": "^5.0.5",
     "morgan": "^1.6.1",
     "open": "0.0.5"
   }

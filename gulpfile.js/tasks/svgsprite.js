@@ -3,12 +3,15 @@ var
   plugins             = require('gulp-load-plugins')(),
   config              = require('../config/svgSprite');
 
-gulp.task('svgsprite', function() {
-  gulp.src(config.source)
+gulp.task('svg:sprite', function() {
+  return gulp.src(config.source)
 
-    // SVG Sprite
-    .pipe(plugins.svgSprite(config.svg))
+    .pipe(plugins.imagemin({
+      svgoPlugins: [{removeTitle: true}]
+    }))
 
-    // Output to dest
+    .pipe(plugins.svgstore())
+
     .pipe(gulp.dest(config.dest));
+
 });

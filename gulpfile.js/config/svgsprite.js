@@ -1,12 +1,6 @@
 var config = require('./');
 
 module.exports = {
-  source: config.assetsPath+'img/**/*.svg',
-  dest: config.assetsPath+'/img',
-  svg: {
-    mode                    : {
-        inline              : true,
-        symbol              : true
-    }
-  }
+  source: config.sourcePath+'assets/img/**/*.svg',
+  dest: config.buildPath+'assets/img/svg/'
 }

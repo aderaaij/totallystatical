@@ -5,7 +5,7 @@ var
   config              = require('../config/images');
 
 // Images
-gulp.task('images', ['svgsprite'], function() {
+gulp.task('images', ['svg:sprite'], function() {
   return gulp.src(config.source)
 
   // Only add to stream if changed
