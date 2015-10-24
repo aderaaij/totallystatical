@@ -33,6 +33,15 @@ Run `gulp watch` to start webserver, watch files and livereload with browsersync
 `gulp watch`
 
 ### build:production
+Builds the app without sourcemaps and minified assets
+* `clean` - Delete entire build folder
+* `bower` - Install bower dependencies if not yet installed
+* `images` - copy and minify images to build folder
+* `scripts:standalone` - copy standalone/header scripts to build folder
+* `styles:production` - Add css and sourcemaps and distribute to build folder
+* `scripts` - Concatinate and disstribute scripts to build folder
+* `templates` - Compile jade templates
+
 
 
 
