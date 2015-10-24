@@ -7,11 +7,8 @@ TotallyStatical is a barebone static site generator using Gulp to do all the hea
 * [Node]( https://nodejs.org/download/ )
 
 ### Installation:
-
-Run npm install:
-
-`npm install`
-
+* run `npm install` to install all node dependencies
+* run `gulp` to install bower dependencies and build the development app
 
 ## Tasks
 
