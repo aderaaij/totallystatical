@@ -10,6 +10,16 @@ TotallyStatical is a barebone static site generator using Gulp to do all the hea
 * run `npm install` to install all node dependencies
 * run `gulp` to install bower dependencies and build the development app
 
+### Contains:
+* Gulp
+* Jade templating engine
+* Node Sass Parser with:
+  * [Susy v2]( http://susy.oddbird.net/ )
+  * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
+  * [Breakpoint]( http://breakpoint-sass.com/ )
+* Express server
+* BrowserSync livereload
+
 ## Tasks
 
 #### default
@@ -107,14 +117,3 @@ Uses:
 * `gulp-changed`
 * `gulp-if`
 * `gulp-filter`
-
-
-## Contains:
-* Gulp
-* Jade templating engine
-* Node Sass Parser with:
-  * [Susy v2]( http://susy.oddbird.net/ )
-  * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
-  * [Breakpoint]( http://breakpoint-sass.com/ )
-* Express server
-* BrowserSync livereload
