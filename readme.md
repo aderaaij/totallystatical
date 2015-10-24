@@ -17,7 +17,7 @@ Run npm install:
 
 #### default
 
-Runs the `gulp build` task which in turn runs the following tasks:
+Runs the `build` task which in turn runs the following tasks:
 * `clean` - Delete entire build folder
 * `bower` - Install bower dependencies if not yet installed
 * `images` - copy and minify images to build folder
@@ -58,7 +58,42 @@ Uses:
 * `gulp-images`
 * `gulp-changed`
 
+#### scripts
+Concatenates, uglifies and distributes `.js` files to build folder.
+* `gulp-concat`
+* `gulp-rename`
+* `gulp-uglify`
+* `gulp-if`
 
+#### scripts:standalone
+Distributes standalone scripts to the build folder. Use for modernizr or other scripts that should be included standalone.
+Uses:
+* `gulp-changed`
+
+#### styles
+Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging
+Uses:
+* `gulp-sass`
+* `gulp-sourcemaps`
+* `gulp-autoprefixer`
+* `gulp-if`
+
+#### styles:standalone
+Compile `/sass`, to css, autoprefix and minify. Doesn't generate source maps
+Uses:
+* `gulp-sass`
+* `gulp-autoprefixer`
+* `gulp-minify-css`
+* `gulp-rename`
+
+#### templates
+
+Uses:
+* `gulp-jade`
+* `gulp-jade-inheritance`
+* `gulp-changed`
+* `gulp-if`
+* `gulp-filter`
 
 
 ## Contains:
