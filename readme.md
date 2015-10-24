@@ -12,9 +12,16 @@ Run npm install:
 
 `npm install`
 
+
+## Tasks
+
+### default
+
 Run the default `gulp` task to install all bower components and run build taks for the first time:
 
 `gulp`
+
+### gulp watch
 
 Run `gulp watch` to start webserver, watch files and livereload with browsersync
 
