@@ -52,7 +52,7 @@ Checks if bower dependencies in bower.json are installed, and if not, installs t
 Uses:
 * `gulp-bower`
 
-### Images
+#### images
 Minifies images and distributes them to the build asset folder
 Uses:
 * `gulp-images`
