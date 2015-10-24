@@ -17,17 +17,26 @@ Run npm install:
 
 ### default
 
-Run the default `gulp` task to install all bower components and run build taks for the first time:
+Runs the `gulp build` task which in turn runs the following tasks:
+* `clean` - Delete entire build folder
+* `bower` - Install bower dependencies if not yet installed
+* `images` - copy and minify images to build folder
+* `scripts:standalone` - copy standalone/header scripts to build folder
+* `styles` - Add css and sourcemaps and distribute to build folder
+* `scripts` - Concatinate and disstribute scripts to build folder
+* `templates` - Compile jade templates
 
-`gulp`
-
-### gulp watch
+### watch
 
 Run `gulp watch` to start webserver, watch files and livereload with browsersync
 
 `gulp watch`
 
-### Contains:
+### build:production
+
+
+
+## Contains:
 * Gulp
 * Jade templating engine
 * Node Sass Parser with:
