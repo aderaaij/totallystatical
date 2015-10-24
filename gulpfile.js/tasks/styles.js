@@ -5,31 +5,36 @@ var
   config              = require('../config/styles'),
   errorHandler        = require('../lib/errorHandler');
 
-// Styles
-gulp.task('styles', function() {
+gulp.task('styles', function(cb) {
   return gulp.src(config.source)
 
-    // Specify output style
+    .pipe(plugins.sourcemaps.init())
+
     .pipe(plugins.sass(config.settings))
 
-    // Catch errors
     .on('error', errorHandler)
 
-    // Autoprefixer
     .pipe(plugins.autoprefixer(config.autoprefixer))
 
-    // Add a .min version
-    .pipe(plugins.rename({suffix: '.min'}))
+    .pipe(plugins.sourcemaps.write('./'))
 
-    // Minify .min version
-    // .pipe(plugins.minifyCss())
-
-    // Distribute to build path
     .pipe(gulp.dest(config.dest))
 
-    // Livereload connect
     .pipe(browserSync.reload({stream:true}))
 
-    // Show notification
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })));
+});
+
+gulp.task('styles:production', function(cb) {
+  return gulp.src(config.source)
+
+    .pipe(plugins.sass(config.settings))
+
+    .on('error', errorHandler)
+
+    .pipe(plugins.autoprefixer(config.autoprefixer))
+
+    .pipe(plugins.minifyCss())
+
+    .pipe(gulp.dest(config.dest))
 });

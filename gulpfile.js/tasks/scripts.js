@@ -5,7 +5,7 @@ var
   config              = require('../config/scripts'),
   errorHandler        = require('../lib/errorHandler');
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function(cb) {
   return gulp.src(config.source)
 
   // Concatinate in one file
@@ -27,7 +27,7 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest(config.dest))
 
   // Livereload
-  .pipe(browserSync.reload({stream:true}))
+  .pipe(browserSync.reload({stream: true}))
 
   // Show notifcation
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Scripts task complete' })));

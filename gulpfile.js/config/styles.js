@@ -6,7 +6,7 @@ module.exports = {
   dest: config.buildPath+'assets/css/',
   base: config.assetsPath+'sass/**/*',
   settings: {
-    outputStyle: 'expanded',
+    outputStyle: 'nested',
     includePaths: [
       './bower_components/normalize-scss/',
       './bower_components/susy/sass/',
