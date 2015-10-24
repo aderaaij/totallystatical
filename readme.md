@@ -47,22 +47,26 @@ Builds the app without sourcemaps and minified assets
 
 #### clean
 Deletes build folder.
+
 Uses:
 * `del` plugin
 
 #### bower
 Checks if bower dependencies in bower.json are installed, and if not, installs them.
+
 Uses:
 * `gulp-bower`
 
 #### images
 Minifies images and distributes them to the build asset folder
+
 Uses:
 * `gulp-images`
 * `gulp-changed`
 
 #### svg:sprites
 Create a SVG sprite from icons in the configured folder
+
 Uses:
 * `gulp-images`
 * `gulp-svgstore`
@@ -76,11 +80,13 @@ Concatenates, uglifies and distributes `.js` files to build folder.
 
 #### scripts:standalone
 Distributes standalone scripts to the build folder. Use for modernizr or other scripts that should be included standalone.
+
 Uses:
 * `gulp-changed`
 
 #### styles
 Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging
+
 Uses:
 * `gulp-sass`
 * `gulp-sourcemaps`
@@ -89,6 +95,7 @@ Uses:
 
 #### styles:standalone
 Compile `/sass`, to css, autoprefix and minify. Doesn't generate source maps
+
 Uses:
 * `gulp-sass`
 * `gulp-autoprefixer`
