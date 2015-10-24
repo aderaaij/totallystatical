@@ -42,6 +42,22 @@ Builds the app without sourcemaps and minified assets
 * `scripts` - Concatinate and disstribute scripts to build folder
 * `templates` - Compile jade templates
 
+### clean
+Deletes build folder.
+Uses:
+* `del` plugin
+
+### bower
+Checks if bower dependencies in bower.json are installed, and if not, installs them.
+Uses:
+* `gulp-bower`
+
+### Images
+Minifies images and distributes them to the build asset folder
+Uses:
+* `gulp-images`
+* `gulp-changed`
+
 
 
 
