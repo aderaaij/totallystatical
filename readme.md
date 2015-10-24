@@ -29,8 +29,9 @@ Runs the `build` task which in turn runs the following tasks:
 #### watch
 
 Run `gulp watch` to start webserver, watch files and livereload with browsersync
-
 `gulp watch`
+Uses:
+* `gulp-watch`
 
 #### build:production
 Builds the app without sourcemaps and minified assets
