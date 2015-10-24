@@ -15,7 +15,7 @@ Run npm install:
 
 ## Tasks
 
-### default
+#### default
 
 Runs the `gulp build` task which in turn runs the following tasks:
 * `clean` - Delete entire build folder
@@ -26,13 +26,13 @@ Runs the `gulp build` task which in turn runs the following tasks:
 * `scripts` - Concatinate and disstribute scripts to build folder
 * `templates` - Compile jade templates
 
-### watch
+#### watch
 
 Run `gulp watch` to start webserver, watch files and livereload with browsersync
 
 `gulp watch`
 
-### build:production
+#### build:production
 Builds the app without sourcemaps and minified assets
 * `clean` - Delete entire build folder
 * `bower` - Install bower dependencies if not yet installed
@@ -42,12 +42,12 @@ Builds the app without sourcemaps and minified assets
 * `scripts` - Concatinate and disstribute scripts to build folder
 * `templates` - Compile jade templates
 
-### clean
+#### clean
 Deletes build folder.
 Uses:
 * `del` plugin
 
-### bower
+#### bower
 Checks if bower dependencies in bower.json are installed, and if not, installs them.
 Uses:
 * `gulp-bower`
