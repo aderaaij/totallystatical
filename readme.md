@@ -61,6 +61,12 @@ Uses:
 * `gulp-images`
 * `gulp-changed`
 
+#### svg:sprites
+Create a SVG sprite from icons in the configured folder
+Uses:
+* `gulp-images`
+* `gulp-svgstore`
+
 #### scripts
 Concatenates, uglifies and distributes `.js` files to build folder.
 * `gulp-concat`
