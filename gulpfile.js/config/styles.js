@@ -6,6 +6,11 @@ module.exports = {
   dest: config.buildPath+'assets/css/',
   base: config.assetsPath+'sass/**/*',
   settings: {
-    outputStyle: 'compressed'
+    outputStyle: 'expanded',
+    includePaths: [
+      './bower_components/normalize-scss/',
+      './bower_components/susy/sass/',
+      './bower_components/compass-breakpoint/stylesheets/'
+    ]
   }
 }

@@ -22,7 +22,7 @@ gulp.task('styles', function() {
     .pipe(plugins.rename({suffix: '.min'}))
 
     // Minify .min version
-    .pipe(plugins.minifyCss())
+    // .pipe(plugins.minifyCss())
 
     // Distribute to build path
     .pipe(gulp.dest(config.dest))
