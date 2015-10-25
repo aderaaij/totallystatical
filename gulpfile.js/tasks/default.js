@@ -7,11 +7,12 @@ var defaultTask = function(cb) {
     [
       'bower'
     ],
-    ['
-      images',
+    [
+      'images',
       'svg:sprite'
     ],
     [
+      'scripts:standalone',
       'styles'
     ],
     'watch',
