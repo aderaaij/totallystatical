@@ -18,7 +18,7 @@ gulp.task('templates', function() {
   .pipe(plugins.if(global.isWatching, plugins.cached('jade')))
 
   // Watch partials for change
-  .pipe(plugins.jadeInheritance({basedir: config.base}))
+  .pipe(plugins.jadeInheritance(config.jadeInheritance))
 
   // Ignore build of files starting with _
   .pipe(plugins.filter(function (file) {

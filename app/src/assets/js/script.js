@@ -12,5 +12,3 @@ var waypoint = new Waypoint({
     console.log('Scrolled to waypoint!')
   }
 })
-
-
