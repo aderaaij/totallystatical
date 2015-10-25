@@ -30,14 +30,27 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 All tasks are defined in `gulpfile.js/tasks`. Most tasks have
 
 #### default
+Runs the `build` task
 
-Runs the `build` task which in turn runs the following tasks:
+#### build
+
+Builds app including sourcemaps. Runs the following tasks:
 * [`clean`](#clean)
 * [`bower`](#bower)
 * [`images`](#images)
 * [`scripts:standalone`](#scriptsstandalone)
-* [`styles`](#styles)
 * [`scripts`](#scripts)
+* [`styles`](#styles)
+* [`templates`](#templates)
+
+#### build:production
+Builds app with minified assets. Runs the following tasks:
+* [`clean`](#clean)
+* [`bower`](#bower)
+* [`images`](#images)
+* [`styles:production`](#stylesproduction)
+* [`scripts:standalone`](#scriptsstandalone)
+* [`scripts:production`](#scripts)
 * [`templates`](#templates)
 
 #### watch
@@ -51,16 +64,6 @@ Runs the tasks:
 
 Uses:
 * `gulp-watch`
-
-#### build:production
-Builds the app without sourcemaps and minified assets
-* [`clean`](#clean)
-* [`bower`](#bower)
-* [`images`](#images)
-* [`styles:production`](#stylesproduction)
-* [`scripts:standalone`](#scriptsstandalone)
-* [`scripts:production`](#scripts)
-* [`templates`](#templates)
 
 #### clean
 Deletes entire build folder.
