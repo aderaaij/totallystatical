@@ -33,7 +33,7 @@ gulp.task('scripts', function(cb) {
   .pipe(gulp.dest(config.dest))
 
   // Livereload
-  .pipe(browserSync.reload({stream: true}))
+  .pipe(browserSync.stream())
 
   // Show notifcation
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Scripts task complete' })));
@@ -61,9 +61,6 @@ gulp.task('scripts:production', function(cb) {
 
   // Distribute to build
   .pipe(gulp.dest(config.dest))
-
-  // Livereload
-  .pipe(browserSync.reload({stream: true}))
 
   // Show notifcation
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Scripts task complete' })));

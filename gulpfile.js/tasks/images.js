@@ -17,7 +17,8 @@ gulp.task('images', ['svg:sprite'], function() {
   // Distribute to build path
   .pipe(gulp.dest(config.dest))
 
-  .pipe(browserSync.reload({stream:true}))
+  // Notify browsersync of changes
+  .pipe(browserSync.stream())
 
   // Show notification
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })));

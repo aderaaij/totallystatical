@@ -20,7 +20,7 @@ gulp.task('styles', function(cb) {
 
     .pipe(gulp.dest(config.dest))
 
-    .pipe(browserSync.reload({stream:true}))
+    .pipe(browserSync.stream())
 
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })));
 });
