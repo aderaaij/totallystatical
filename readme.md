@@ -27,7 +27,7 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 
 ## Tasks
 
-All tasks are defined in `gulpfile.js/tasks`. Most tasks have
+All tasks are defined in `gulpfile.js/tasks`. Most tasks have a corresponding config file in `gulpfile.js/config`. Some share a config file and some just use `gulpfile.js/index.js`
 
 #### default
 Runs the `build` task
