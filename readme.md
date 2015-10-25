@@ -143,7 +143,7 @@ Uses:
 * `browser-sync`
 
 #### setwatch
-Sets a global watch variable to `true`. Use to execute certain taks, functions or configurations only when `gulp watch` is running.
+Sets a global `isWatching` variable to `true`. Use to execute certain taks, functions or configurations only when `gulp watch` is running.
 
 ## To-do
 * Easily include js node_modules in the front-end (Webpack? Browserify?)
