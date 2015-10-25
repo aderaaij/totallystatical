@@ -2,6 +2,8 @@
 
 A barebone static site generator / rapid prototype tool leveraging the power of Gulp for all the heavy lifting.
 
+Webpack stuff in progress
+
 ### Requirements:
 
 * [Node]( https://nodejs.org/download/ )
