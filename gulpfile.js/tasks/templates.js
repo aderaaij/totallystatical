@@ -5,7 +5,6 @@ var
   config              = require('../config/templates'),
   errorHandler        = require('../lib/errorHandler');
 
-// Execute Jade Templates
 gulp.task('templates', function() {
   return gulp.src(config.source)
 
@@ -41,5 +40,3 @@ gulp.task('templates', function() {
   // Show notification
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
 });
-
-// gulp.task('jade-watch', ['templates'], browserSync.reload);

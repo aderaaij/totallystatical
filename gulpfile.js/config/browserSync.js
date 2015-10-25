@@ -4,5 +4,5 @@ module.exports = {
   server: {
     baseDir: config.buildPath
   },
-  files: ['**/*.html']
+  open: false
 }
