@@ -1,9 +1,8 @@
-var
-  browserSync         = require('browser-sync'),
-  gulp                = require('gulp'),
-  plugins             = require('gulp-load-plugins')(),
-  config              = require('../config/templates'),
-  errorHandler        = require('../lib/errorHandler');
+var browserSync   = require('browser-sync')
+var gulp          = require('gulp')
+var plugins       = require('gulp-load-plugins')()
+var config        = require('../config/templates')
+var errorHandler  = require('../lib/errorHandler')
 
 gulp.task('templates', function() {
   return gulp.src(config.source)

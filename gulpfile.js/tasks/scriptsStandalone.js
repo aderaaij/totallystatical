@@ -1,8 +1,7 @@
-var
-  browserSync         = require('browser-sync'),
-  gulp                = require('gulp'),
-  plugins             = require('gulp-load-plugins')(),
-  config              = require('../config/scriptsStandalone')
+var browserSync   = require('browser-sync')
+var gulp          = require('gulp')
+var plugins       = require('gulp-load-plugins')()
+var config          = require('../config/scriptsStandalone')
 
 // Copy files
 gulp.task('scripts:standalone', function() {

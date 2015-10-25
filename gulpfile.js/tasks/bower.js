@@ -1,7 +1,6 @@
-var
-  gulp                = require('gulp'),
-  plugins             = require('gulp-load-plugins')(),
-  config              = require('../config/bower');
+var gulp    = require('gulp')
+var plugins = require('gulp-load-plugins')()
+var config  = require('../config/bower')
 
 gulp.task('bower', function(cb) {
   return plugins.bower()

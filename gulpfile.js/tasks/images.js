@@ -1,11 +1,10 @@
-var
-  browserSync         = require('browser-sync'),
-  gulp                = require('gulp'),
-  plugins             = require('gulp-load-plugins')(),
-  config              = require('../config/images');
+var browserSync         = require('browser-sync')
+var gulp                = require('gulp'),
+var plugins             = require('gulp-load-plugins')(),
+var config              = require('../config/images');
 
 // Images
-gulp.task('images', function() {
+var imagesTask = function() {
   return gulp.src(config.source)
 
   // Only add to stream if changed
@@ -20,7 +19,10 @@ gulp.task('images', function() {
   // Notify browsersync of changes
   .pipe(browserSync.stream())
 
-  // Show notification
+  // Show notification if watching
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })));
 
 });
+
+gulp.task('images', imagesTask)
+module.exports = imagesTask

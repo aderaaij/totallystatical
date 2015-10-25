@@ -1,6 +1,6 @@
-var config      = require('../config/scripts')
-var path        = require('path')
-var webpack     = require('webpack')
+var config  = require('../config/scripts')
+var path    = require('path')
+var webpack = require('webpack')
 
 module.exports = function(env) {
 

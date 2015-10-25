@@ -1,11 +1,10 @@
-var
-  gulp                = require('gulp'),
-  express             = require('express'),
-  config              = require('../config/server'),
-  compress            = require('compression'),
-  logger              = require('morgan'),
-  open                = require('open'),
-  plugins             = require('gulp-load-plugins')();
+var gulp                = require('gulp')
+var express             = require('express')
+var config              = require('../config/server')
+var compress            = require('compression')
+var logger              = require('morgan')
+var open                = require('open')
+var plugins             = require('gulp-load-plugins')()
 
 gulp.task('server', function() {
   var url = 'http://localhost:' + config.port;

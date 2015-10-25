@@ -1,13 +1,12 @@
-var
-  browserSync             = require('browser-sync'),
-  gulp                    = require('gulp'),
-  config                  = require('../config/index'),
-  templates               = require('../config/templates'),
-  styles                  = require('../config/styles'),
-  scripts                 = require('../config/scripts'),
-  images                  = require('../config/images'),
-  svgSprite               = require('../config/svgsprite'),
-  plugins                 = require('gulp-load-plugins')();
+var browserSync   = require('browser-sync')
+var gulp          = require('gulp')
+var config        = require('../config/index')
+var templates     = require('../config/templates')
+var styles        = require('../config/styles')
+var scripts       = require('../config/scripts')
+var images        = require('../config/images')
+var svgSprite     = require('../config/svgsprite')
+var plugins       = require('gulp-load-plugins')()
 
 gulp.task('watch', ['browserSync','setWatch', 'templates', 'webpack:watch'], function() {
   plugins.watch(templates.source, function() { gulp.start('jade:watch'); });

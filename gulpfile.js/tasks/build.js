@@ -1,6 +1,5 @@
-var
-  gulp                = require('gulp'),
-  plugins             = require('gulp-load-plugins')();
+var gulp    = require('gulp'),
+var plugins = require('gulp-load-plugins')()
 
 gulp.task('build', function(cb) {
   plugins.sequence(
