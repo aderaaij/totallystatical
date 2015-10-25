@@ -4,7 +4,7 @@ var plugins       = require('gulp-load-plugins')()
 var config        = require('../config/templates')
 var errorHandler  = require('../lib/errorHandler')
 
-gulp.task('templates', function() {
+var templatesTask = function() {
   return gulp.src(config.source)
 
   // Only build changed files
@@ -38,4 +38,6 @@ gulp.task('templates', function() {
 
   // Show notification
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })))
-})
+}
+gulp.task('templates', templatesTask)
+module.exports = templatesTask

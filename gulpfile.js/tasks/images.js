@@ -23,6 +23,5 @@ var imagesTask = function() {
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })))
 
 }
-
 gulp.task('images', imagesTask)
 module.exports = imagesTask

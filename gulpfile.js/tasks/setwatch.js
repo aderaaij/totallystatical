@@ -1,5 +1,7 @@
 var gulp = require('gulp')
 
-gulp.task('setWatch', function() {
+var setWatch = function() {
   global.isWatching = true
-})
+}
+gulp.task('setWatch', setWatch)
+module.exports = setWatch

@@ -16,6 +16,5 @@ var revTask = function(cb) {
     'size-report',
   cb)
 }
-
 gulp.task('rev', revTask)
 module.exports = revTask

@@ -19,6 +19,5 @@ var defaultTask = function(cb) {
     cb
   )
 }
-
 gulp.task('default', defaultTask)
 module.exports = defaultTask

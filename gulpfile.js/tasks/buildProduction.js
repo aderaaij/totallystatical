@@ -1,7 +1,7 @@
 var gulp    = require('gulp')
 var plugins = require('gulp-load-plugins')()
 
-gulp.task('build:production', function(cb) {
+var buildProductionTask = function(cb) {
   plugins.sequence(
     'clean',
     [
@@ -17,6 +17,9 @@ gulp.task('build:production', function(cb) {
       'webpack:production',
       'templates'
     ],
+    'rev',
     cb
   )
-})
+}
+gulp.task('build:production', buildProductionTask)
+module.exports = buildProductionTask

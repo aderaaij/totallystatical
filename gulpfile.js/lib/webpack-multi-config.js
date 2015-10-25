@@ -1,17 +1,20 @@
-var config  = require('../config/scripts')
-var path    = require('path')
-var webpack = require('webpack')
+var config          = require('../config/scripts')
+var root            = require('../config/index')
+var path            = require('path')
+var webpack         = require('webpack')
+var webpackManifest = require('./webpackManifest')
 
 module.exports = function(env) {
+  var filenamePattern = env === 'production' ? '[name]-[hash].js' : '[name].js'
 
   var webpackConfig = {
+    // context: './app/src/assets/js/',
     cache: false,
     entry: config.entries,
     output: {
       path: path.normalize(config.dest),
       publicPath: '/js/',
-      filename: '[name].js',
-      chunkFilename: '[chunkhash].js'
+      filename: filenamePattern
     },
     module: {
       loaders: [
@@ -41,7 +44,7 @@ module.exports = function(env) {
 
   if(env === 'production') {
     webpackConfig.plugins.push(
-      // new webpackManifest('js/', config.buildPath),
+      new webpackManifest('/js/', root.buildPath),
       new webpack.DefinePlugin({
         'process.env': {
           'NODE_ENV': JSON.stringify('production')

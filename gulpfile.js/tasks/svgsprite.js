@@ -2,7 +2,7 @@ var gulp                = require('gulp')
 var plugins             = require('gulp-load-plugins')()
 var config              = require('../config/svgSprite')
 
-gulp.task('svg:sprite', function() {
+var svgSpriteTask = function() {
   return gulp.src(config.source)
 
     .pipe(plugins.imagemin({
@@ -13,4 +13,7 @@ gulp.task('svg:sprite', function() {
 
     .pipe(gulp.dest(config.dest))
 
-})
+}
+gulp.task('svg:sprite', svgSpriteTask)
+module.exports = svgSpriteTask
+

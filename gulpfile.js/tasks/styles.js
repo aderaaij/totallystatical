@@ -4,7 +4,7 @@ var plugins             = require('gulp-load-plugins')()
 var config              = require('../config/styles')
 var errorHandler        = require('../lib/errorHandler')
 
-gulp.task('styles', function(cb) {
+var stylesTask = function(cb) {
   return gulp.src(config.source)
 
     .pipe(plugins.sourcemaps.init())
@@ -22,9 +22,12 @@ gulp.task('styles', function(cb) {
     .pipe(browserSync.stream())
 
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })))
-})
+}
+gulp.task('styles', stylesTask)
+module.exports = stylesTask
 
-gulp.task('styles:production', function(cb) {
+
+var stylesProductionTask = function(cb) {
   return gulp.src(config.source)
 
     .pipe(plugins.sass(config.settings))
@@ -36,4 +39,6 @@ gulp.task('styles:production', function(cb) {
     .pipe(plugins.minifyCss())
 
     .pipe(gulp.dest(config.dest))
-})
+}
+gulp.task('styles:production', stylesProductionTask)
+module.exports = stylesProductionTask

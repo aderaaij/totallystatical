@@ -9,8 +9,8 @@ module.exports = {
   entries: {
     "script": [config.assetsPath+'js/script.js']
   },
-  // entry: config.assetsPath+'js/script.js',
   dest: config.buildPath+'assets/js',
+  base: config.assetsPath+'assets/js',
   extractSharedJs: true,
   concat: 'scripts.js',
   rename: {

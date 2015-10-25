@@ -2,6 +2,8 @@ var gulp    = require('gulp')
 var del     = require('del')
 var config  = require('../config/index')
 
-gulp.task('clean', function (cb) {
+var cleanTask = function (cb) {
   return del(config.buildPath, cb)
-})
+}
+gulp.task('clean', cleanTask)
+module.exports = cleanTask
