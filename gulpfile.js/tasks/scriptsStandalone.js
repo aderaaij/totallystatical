@@ -18,5 +18,5 @@ gulp.task('scripts:standalone', function() {
   .pipe(browserSync.stream())
 
   // If is watching
-  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Standalone scripts task complete' })));
-});
+  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Standalone scripts task complete' })))
+})

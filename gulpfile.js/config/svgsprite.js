@@ -1,4 +1,4 @@
-var config = require('./');
+var config = require('./')
 
 module.exports = {
   source: config.sourcePath+'assets/sprite/**/*.svg',

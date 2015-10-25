@@ -18,5 +18,5 @@ gulp.task('build:production', function(cb) {
       'templates'
     ],
     cb
-  );
+  )
 })
