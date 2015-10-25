@@ -9,7 +9,7 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 ### Installation:
 * run `npm install` to install all node dependencies
 * run `gulp` to install bower dependencies and build the development app for the first time
-* run `gulp watch` to watch and start developing!
+* run `gulp watch` to watch files and start developing!
 
 ### Features:
 * Build, Clean and Watch tasks
