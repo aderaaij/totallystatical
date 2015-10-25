@@ -54,7 +54,7 @@ Uses:
 
 #### build:production
 Builds the app without sourcemaps and minified assets
-* [`clean`](#clean)
+* `[clean](#clean)`
 * `bower` - Install bower dependencies if not yet installed
 * `images` - copy and minify images to build folder
 * `scripts:standalone` - copy standalone/header scripts to build folder
