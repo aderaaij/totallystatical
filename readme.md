@@ -15,11 +15,11 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 * Build, Clean and Watch tasks
 * Synchronized browser testing with BrowserSync
 * Jade templating with partials support*
-* Node Sass Parser with:
+* Blazing fast Node Sass (LibSass) parser
+* Bower support. Includes the following Sass packaged by default:
   * [Susy v2]( http://susy.oddbird.net/ )
   * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
   * [Breakpoint]( http://breakpoint-sass.com/ )
-* Bower support
 * Concatenating and minifying javascript
 * Minifying images
 * Creating SVG sprites with Svgstore
