@@ -11,6 +11,6 @@ gulp.task('svg:sprite', function() {
 
     .pipe(plugins.svgstore())
 
-    .pipe(gulp.dest(config.dest));
+    .pipe(gulp.dest(config.dest))
 
-});
+})

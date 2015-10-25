@@ -21,8 +21,8 @@ gulp.task('styles', function(cb) {
 
     .pipe(browserSync.stream())
 
-    .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })));
-});
+    .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })))
+})
 
 gulp.task('styles:production', function(cb) {
   return gulp.src(config.source)
@@ -36,4 +36,4 @@ gulp.task('styles:production', function(cb) {
     .pipe(plugins.minifyCss())
 
     .pipe(gulp.dest(config.dest))
-});
+})

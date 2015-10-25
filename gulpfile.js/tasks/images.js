@@ -20,9 +20,9 @@ var imagesTask = function() {
   .pipe(browserSync.stream())
 
   // Show notification if watching
-  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })));
+  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })))
 
-};
+}
 
 gulp.task('images', imagesTask)
 module.exports = imagesTask

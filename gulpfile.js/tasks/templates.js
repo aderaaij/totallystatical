@@ -21,7 +21,7 @@ gulp.task('templates', function() {
 
   // Ignore build of files starting with _
   .pipe(plugins.filter(function (file) {
-    return !/\/_/.test(file.path) && !/^_/.test(file.relative);
+    return !/\/_/.test(file.path) && !/^_/.test(file.relative)
   }))
 
   // Catch errors
@@ -37,5 +37,5 @@ gulp.task('templates', function() {
   .pipe(gulp.dest(config.dest))
 
   // Show notification
-  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
-});
+  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })))
+})

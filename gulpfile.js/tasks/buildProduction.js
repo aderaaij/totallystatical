@@ -19,4 +19,4 @@ gulp.task('build:production', function(cb) {
     ],
     cb
   );
-});
+})

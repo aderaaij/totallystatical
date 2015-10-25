@@ -4,5 +4,5 @@ var config  = require('../config/bower')
 
 gulp.task('bower', function(cb) {
   return plugins.bower()
-    .pipe(gulp.dest(config.dest));
-});
+    .pipe(gulp.dest(config.dest))
+})
