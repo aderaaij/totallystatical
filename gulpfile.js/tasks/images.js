@@ -1,7 +1,7 @@
 var browserSync         = require('browser-sync')
-var gulp                = require('gulp'),
-var plugins             = require('gulp-load-plugins')(),
-var config              = require('../config/images');
+var gulp                = require('gulp')
+var plugins             = require('gulp-load-plugins')()
+var config              = require('../config/images')
 
 // Images
 var imagesTask = function() {
@@ -22,7 +22,7 @@ var imagesTask = function() {
   // Show notification if watching
   .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })));
 
-});
+};
 
 gulp.task('images', imagesTask)
 module.exports = imagesTask

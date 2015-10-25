@@ -1,4 +1,4 @@
-var gulp    = require('gulp'),
+var gulp    = require('gulp')
 var plugins = require('gulp-load-plugins')()
 
 gulp.task('build', function(cb) {
@@ -10,7 +10,7 @@ gulp.task('build', function(cb) {
     [
       'images',
       'svg:sprite',
-      'scripts:standalone'
+      'webpack:production'
     ],
     [
       'styles',

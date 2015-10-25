@@ -6,7 +6,7 @@ module.exports = function(env) {
 
   var webpackConfig = {
     cache: false,
-    entry: config.entry,
+    entry: config.entries,
     output: {
       path: path.normalize(config.dest),
       publicPath: '/js/',

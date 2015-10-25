@@ -6,9 +6,8 @@ module.exports = {
     config.assetsPath+'js/partials/*.js',
     config.assetsPath+'js/*.js'
   ],
-  entry: {
-    "script": [config.assetsPath+'js/script.js'],
-    "shared": [config.assetsPath+'js/shared.js']
+  entries: {
+    "script": [config.assetsPath+'js/script.js']
   },
   // entry: config.assetsPath+'js/script.js',
   dest: config.buildPath+'assets/js',

@@ -1,4 +1,4 @@
-var gulp    = require('gulp'),
+var gulp    = require('gulp')
 var plugins = require('gulp-load-plugins')()
 
 gulp.task('build:production', function(cb) {
@@ -14,7 +14,7 @@ gulp.task('build:production', function(cb) {
     ],
     [
       'styles:production',
-      'scripts:production',
+      'webpack:production',
       'templates'
     ],
     cb

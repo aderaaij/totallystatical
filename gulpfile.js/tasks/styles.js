@@ -1,5 +1,5 @@
 var browserSync         = require('browser-sync')
-var gulp                = require('gulp'),
+var gulp                = require('gulp')
 var plugins             = require('gulp-load-plugins')()
 var config              = require('../config/styles')
 var errorHandler        = require('../lib/errorHandler')
