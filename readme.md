@@ -1,6 +1,6 @@
 # TotallyStatical site generator
 
-TotallyStatical is a barebone static site generator using Gulp to do all the heavy lifting.
+A barebone static site generator / rapid prototype tool leveraging the power of Gulp for all the heavy lifting.
 
 ### Requirements:
 
@@ -8,19 +8,26 @@ TotallyStatical is a barebone static site generator using Gulp to do all the hea
 
 ### Installation:
 * run `npm install` to install all node dependencies
-* run `gulp` to install bower dependencies and build the development app
+* run `gulp` to install bower dependencies and build the development app for the first time
+* run `gulp watch` to watch fie
 
-### Contains:
-* Gulp
-* Jade templating engine
+### Features:
+* Build, Clean and Watch tasks
+* Synchronized browser testing with BrowserSync
+* Jade templating with partials support*
 * Node Sass Parser with:
   * [Susy v2]( http://susy.oddbird.net/ )
   * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
   * [Breakpoint]( http://breakpoint-sass.com/ )
-* Express server
-* BrowserSync livereload
+* Bower support
+* Concatenating and minifying javascript
+* Minifying images
+* Creating SVG sprites with Svgstore
+* Modular tasks and config files
 
 ## Tasks
+
+All tasks are defined in `gulpfile.js/tasks`. Most tasks have
 
 #### default
 
@@ -35,9 +42,12 @@ Runs the `build` task which in turn runs the following tasks:
 
 #### watch
 
-Run `gulp watch` to start webserver, watch files and livereload with browsersync
+Run `gulp watch` to start webserver, watch files and livereload with browsersync.
 
-`gulp watch`
+Runs the tasks:
+* `browsersync`
+* `setwatch`
+* `templates`
 
 Uses:
 * `gulp-watch`
@@ -53,13 +63,13 @@ Builds the app without sourcemaps and minified assets
 * `templates` - Compile jade templates
 
 #### clean
-Deletes build folder.
+Deletes entire build folder.
 
 Uses:
 * `del` plugin
 
 #### bower
-Checks if bower dependencies in bower.json are installed, and if not, installs them.
+Checks if bower dependencies specified in the `bower.json` file are installed, and if not, installs them.
 
 Uses:
 * `gulp-bower`

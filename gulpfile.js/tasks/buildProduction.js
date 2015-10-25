@@ -14,7 +14,7 @@ gulp.task('build:production', function(cb) {
     ],
     [
       'styles:production',
-      'scripts',
+      'scripts:production',
       'templates'
     ],
     cb
