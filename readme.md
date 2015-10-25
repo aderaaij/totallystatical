@@ -45,22 +45,22 @@ Runs the `build` task which in turn runs the following tasks:
 Run `gulp watch` to start webserver, watch files and livereload with browsersync. Uses the `gulp-watch` plugin to correctly handle new files while watching.
 
 Runs the tasks:
-* `browsersync`
-* `setwatch`
-* `templates`
+* [`browsersync`](#browsersync)
+* [`setwatch`](#setwatch)
+* [`templates`](#templates)
 
 Uses:
 * `gulp-watch`
 
 #### build:production
 Builds the app without sourcemaps and minified assets
-* `[clean](#clean)`
-* `bower` - Install bower dependencies if not yet installed
-* `images` - copy and minify images to build folder
-* `scripts:standalone` - copy standalone/header scripts to build folder
-* `styles:production` - Add css and sourcemaps and distribute to build folder
-* `scripts` - Concatinate and disstribute scripts to build folder
-* `templates` - Compile jade templates
+* [`clean`](#clean)
+* [`bower`](#bower)
+* [`images`](#images)
+* [`scripts:standalone`](#scriptsstandalone)
+* [`styles:production`](#stylesproduction)
+* [`scripts`](#scripts)
+* [`templates`](#templates)
 
 #### clean
 Deletes entire build folder.
@@ -132,6 +132,15 @@ Uses:
 * `gulp-changed`
 * `gulp-if`
 * `gulp-filter`
+
+#### browsersync
+Start browsersync server
+
+Uses:
+* `browser-sync`
+
+#### setwatch
+Sets a global watch variable to `true`. Use to execute certain taks, functions or configurations only when `gulp watch` is running.
 
 ## To-do
 * Easily include js node_modules in the front-end (Webpack? Browserify?)
