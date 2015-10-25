@@ -1,8 +1,6 @@
 # TotallyStatical site generator
 
-A barebone static site generator / rapid prototype tool leveraging the power of Gulp for all the heavy lifting.
-
-Webpack stuff in progress
+A barebone static site generator / rapid prototype tool leveraging the power of Gulp amd Webpack for all the heavy lifting.
 
 ### Requirements:
 
@@ -32,18 +30,7 @@ Webpack stuff in progress
 All tasks are defined in `gulpfile.js/tasks`. Most tasks have a corresponding config file in `gulpfile.js/config`. Some share a config file and some just use `gulpfile.js/index.js`
 
 #### default
-Runs the `build` task
-
-#### build
-
-Builds app including sourcemaps. Runs the following tasks:
-* [`clean`](#clean)
-* [`bower`](#bower)
-* [`images`](#images)
-* [`scripts:standalone`](#scriptsstandalone)
-* [`scripts`](#scripts)
-* [`styles`](#styles)
-* [`templates`](#templates)
+Cleans, builds app and enables watch tasks
 
 #### build:production
 Builds app with minified assets. Runs the following tasks:
@@ -147,5 +134,5 @@ Uses:
 #### setwatch
 Sets a global `isWatching` variable to `true`. Use to execute certain taks, functions or configurations only when `gulp watch` is running.
 
-## To-do
-* Easily include js node_modules in the front-end (Webpack? Browserify?)
+## Credits
+Much credit goes out to the [gulp-starter repo](https://github.com/vigetlabs/gulp-starter) from Viget Labs(https://github.com/vigetlabs/).
