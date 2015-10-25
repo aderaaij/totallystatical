@@ -32,13 +32,13 @@ All tasks are defined in `gulpfile.js/tasks`. Most tasks have
 #### default
 
 Runs the `build` task which in turn runs the following tasks:
-* `clean` - Delete entire build folder
-* `bower` - Install bower dependencies if not yet installed
-* `images` - copy and minify images to build folder
-* `scripts:standalone` - copy standalone/header scripts to build folder
-* `styles` - Add css and sourcemaps and distribute to build folder
-* `scripts` - Concatinate and disstribute scripts to build folder
-* `templates` - Compile jade templates
+* [`clean`](#clean)
+* [`bower`](#bower)
+* [`images`](#images)
+* [`scripts:standalone`](#scriptsstandalone)
+* [`styles`](#styles)
+* [`scripts`](#scripts)
+* [`templates`](#templates)
 
 #### watch
 
@@ -57,9 +57,9 @@ Builds the app without sourcemaps and minified assets
 * [`clean`](#clean)
 * [`bower`](#bower)
 * [`images`](#images)
-* [`scripts:standalone`](#scriptsstandalone)
 * [`styles:production`](#stylesproduction)
-* [`scripts`](#scripts)
+* [`scripts:standalone`](#scriptsstandalone)
+* [`scripts:production`](#scripts)
 * [`templates`](#templates)
 
 #### clean
