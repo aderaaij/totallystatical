@@ -1,10 +1,7 @@
 var config = require('./')
 
 module.exports = {
-  source: [
-  	config.assetsPath+'img/**/*',
-  	'!'+config.assetsPath+'img/symbol/svg/sprite.symbol.svg'
-  ],
+  source: config.assetsPath+'img/**/*',
   dest: config.buildPath+'assets/img/',
   imagemin: {
     optimizationLevel: 3,
