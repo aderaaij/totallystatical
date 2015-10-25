@@ -102,7 +102,11 @@ Uses:
 * `gulp-changed`
 
 #### styles
-Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging
+Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In the corresponding config file it's possible to define bower packages with `includePaths` to easily define them with `@imports` in your .scss file. By default, the following paths are added"
+
+* `./bower_components/normalize-scss/`
+* `./bower_components/susy/sass/`
+* `./bower_components/compass-breakpoint/stylesheets/`
 
 Uses:
 * `gulp-sass`
@@ -120,6 +124,7 @@ Uses:
 * `gulp-rename`
 
 #### templates
+Generates html files from jade template. Every jade template prefixed with an underscore will not be built into a html file. To speed up the templating process `gulp-jade-inheritance` is used to check which template is dependent on which partial
 
 Uses:
 * `gulp-jade`
@@ -127,3 +132,6 @@ Uses:
 * `gulp-changed`
 * `gulp-if`
 * `gulp-filter`
+
+## To-do
+* Easily include js node_modules in the front-end (Webpack? Browserify?)
