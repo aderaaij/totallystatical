@@ -25,20 +25,3 @@ var stylesTask = function(cb) {
 }
 gulp.task('styles', stylesTask)
 module.exports = stylesTask
-
-
-var stylesProductionTask = function(cb) {
-  return gulp.src(config.source)
-
-    .pipe(plugins.sass(config.settings))
-
-    .on('error', errorHandler)
-
-    .pipe(plugins.autoprefixer(config.autoprefixer))
-
-    .pipe(plugins.minifyCss())
-
-    .pipe(gulp.dest(config.dest))
-}
-gulp.task('styles:production', stylesProductionTask)
-module.exports = stylesProductionTask
