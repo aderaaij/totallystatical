@@ -19,6 +19,8 @@ var templatesTask = function() {
   // Watch partials for change
   .pipe(plugins.jadeInheritance(config.jadeInheritance))
 
+  .on('error', errorHandler)
+
   // Ignore build of files starting with _
   .pipe(plugins.filter(function (file) {
     return !/\/_/.test(file.path) && !/^_/.test(file.relative)
