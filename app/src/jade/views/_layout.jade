@@ -8,11 +8,7 @@ html(lang="en")
 			title #{pageTitle} - My Static Site
 		link(rel='stylesheet', href='assets/css/screen.css')
 	body(class='#{bodyClass}')
-
-		header.site-header
-			.container
-				block header
-
+		
 		block content
 
 		script(src='assets/js/script.js')
