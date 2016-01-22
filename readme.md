@@ -24,6 +24,7 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 * Minifying images
 * Creating SVG sprites with Svgstore
 * Modular tasks and config files
+* Revisioning / cache busting of static assets with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
 ## Tasks
 
@@ -100,11 +101,14 @@ Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In t
 * `./bower_components/susy/sass/`
 * `./bower_components/compass-breakpoint/stylesheets/`
 
+Images should be added with the following path: `../../assets/img/test.jpg` due to some unfixed misconfiguration with the rev'ing (see Bugs and Todo's)
+
 Uses:
 * `gulp-sass`
 * `gulp-sourcemaps`
 * `gulp-autoprefixer`
 * `gulp-if`
+
 
 #### styles:standalone
 Compile `/sass`, to css, autoprefix and minify. Doesn't generate source maps
@@ -133,6 +137,11 @@ Uses:
 
 #### setwatch
 Sets a global `isWatching` variable to `true`. Use to execute certain taks, functions or configurations only when `gulp watch` is running.
+
+## Bugs and to-do's
+
+* Fix background images / rev'ed assets referenced from CSS.
+* Add a build task without any revisioning / cache busting.
 
 ## Credits
 Much credit goes out to the [gulp-starter repo](https://github.com/vigetlabs/gulp-starter) from Viget Labs(https://github.com/vigetlabs/).
