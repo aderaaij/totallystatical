@@ -53,7 +53,6 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgstore": "^5.0.5",
     "gulp-uglify": "^1.0.2",
-    "gulp-uglifycss": "^1.0.4",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.2.4",
     "morgan": "^1.6.1",
