@@ -1,7 +1,0 @@
-{
-  "keyMain": {
-    "user": "username",
-    "pass": "password1"
-  },
-  "keyShort": "username:password1"
-}

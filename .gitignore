@@ -5,5 +5,4 @@
 .DS_Store
 npm-debug.log
 Desktop.ini
-.ftppass
-/tasks/deployFTP.js
+.ftppass.json
