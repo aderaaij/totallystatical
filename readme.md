@@ -15,7 +15,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * **Sass/CSS**
   * Blazing fast Node Sass(libsass) parser
   * Sass Sourcemaps for development
-  * CSS [autoprefixer](https://github.com/postcss/autoprefixer)
+  * CSS prefixing with [autoprefixer](https://github.com/postcss/autoprefixer)
   * CSS minifying with [cssnano](http://cssnano.co/)
 * **Javascript**
   * ES6 support with babel and webpack
@@ -27,10 +27,11 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * **Deployment**
   * Blazing fast FTP deploys with [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)
   * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
-* **Bower support**: Automatically check and install bower packages. Includes the following Sass packages by default:
-  * [Susy v2]( http://susy.oddbird.net/ )
-  * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
-  * [Breakpoint]( http://breakpoint-sass.com/ )
+* **Bower support**: Automatically check and install bower packages.
+  * Includes the following Sass packages by default:
+    * [Susy v2]( http://susy.oddbird.net/ )
+    * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
+    * [Breakpoint]( http://breakpoint-sass.com/ )
 * **Images**
   * Image minifying with imagemin
   * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
