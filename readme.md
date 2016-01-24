@@ -1,6 +1,6 @@
 # TotallyStatical site generator
 
-A barebone static site generator / rapid prototype tool leveraging the power of Gulp and Webpack for all the heavy lifting.
+A barebone static site generator / rapid prototyping tool leveraging the awesome powers of Gulp and Webpack for all the heavy lifting.
 
 ### Requirements:
 
@@ -12,25 +12,33 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 * run `gulp build:production` to create a production build
 
 ### Features:
-* Build, Clean and Watch tasks
-* Synchronized browser testing with BrowserSync
-* Jade templating with partials support*
-* Blazing fast Node Sass (LibSass) parser
-* SCSS Sourcemaps
-* CSS autoprefixing and minifying
-* Bower support. Includes the following Sass packages by default:
+* **Sass/CSS**
+  * Blazing fast Node Sass(libsass) parser
+  * Sass Sourcemaps for development
+  * CSS [autoprefixer](https://github.com/postcss/autoprefixer)
+  * CSS minifying with [cssnano](http://cssnano.co/)
+* **Javascript**
+  * ES6 support with babel and webpack
+  * Source maps
+* **Templating**: * [Jade templating language](http://jade-lang.com/) with partials support
+* **Development**
+  * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
+  * Source maps
+* **Deployment**
+  * Blazing fast FTP deploys with [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)
+  * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
+* **Bower support**: Automatically check and install bower packages. Includes the following Sass packages by default:
   * [Susy v2]( http://susy.oddbird.net/ )
   * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
   * [Breakpoint]( http://breakpoint-sass.com/ )
-* Concatenating and minifying javascript
-* Minifying images
-* Creating SVG sprites with Svgstore
-* Modular tasks and config files
-* Deploying with either ftp or sftp
-* Revisioning / cache busting of static assets with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
+* **Images**
+  * Image minifying with imagemin
+  * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
+  * Easy Jade mixin to create `<use>` code for SVG sprite icons
+* **Revisioning / cache busting**
+  Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
 ## Tasks
-
 All tasks are defined in `gulpfile.js/tasks`. Most tasks have a corresponding config file in `gulpfile.js/config`. Some share a config file and some just use `gulpfile.js/index.js`
 
 #### default
