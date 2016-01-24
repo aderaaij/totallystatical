@@ -164,10 +164,14 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 
 ## Bugs and to-do's
 
-* Fix background images / rev'ed assets referenced from CSS.
+* Fix reference to background images / revisioned assets
 * Add a build task without any revisioning / cache busting.
 
 ## Changelog
+
+### v1.1.0
+* Replaced `gulp-minify-css` with `gulp-cssnano`
+* Added a `gulp deploy:ftp` and `gulp deploy:sftp` task
 
 ## Credits
 Much credit goes out to the [gulp-starter repo](https://github.com/vigetlabs/gulp-starter) from Viget Labs(https://github.com/vigetlabs/).
