@@ -1,4 +1,4 @@
-# TotallyStatical site generator :sufer:
+# TotallyStatical site generator
 
 A barebone static site generator / rapid prototyping tool leveraging the awesome powers of Gulp and Webpack for all the heavy lifting.
 
