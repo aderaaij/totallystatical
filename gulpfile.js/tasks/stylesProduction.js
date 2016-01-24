@@ -12,7 +12,7 @@ var stylesProductionTask = function(cb) {
     .on('error', errorHandler)
 
     .pipe(plugins.autoprefixer(config.autoprefixer))
-    
+
     .pipe(gulp.dest(config.dest))
 }
 gulp.task('styles:production', stylesProductionTask)
