@@ -170,6 +170,7 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 ## Changelog
 
 ### v1.1.0
+**24/12/2016**
 * Replaced `gulp-minify-css` with `gulp-cssnano`
 * Added a `gulp deploy:ftp` and `gulp deploy:sftp` task
 
