@@ -20,7 +20,8 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * **Javascript**
   * ES6 support with babel and webpack
   * Source maps
-* **Templating**: * [Jade templating language](http://jade-lang.com/) with partials support
+* **Templating**:
+  * [Jade templating language](http://jade-lang.com/) with partials support
 * **Development**
   * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
   * Source maps
