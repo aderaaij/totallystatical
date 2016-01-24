@@ -55,10 +55,10 @@ Run either `gulp deloy:ftp` or `gulp deply:sftp` to deploy through FTP or SFTP. 
 ## Tasks
 All tasks are defined in `gulpfile.js/tasks`. Most tasks have a corresponding config file in `gulpfile.js/config`. Some share a config file and some just use `gulpfile.js/index.js`
 
-#### default
+### default
 Cleans, builds app and enables watch tasks
 
-#### build:production
+### build:production
 Builds app with minified assets. Runs the following tasks:
 * [`clean`](#clean)
 * [`bower`](#bower)
@@ -68,7 +68,7 @@ Builds app with minified assets. Runs the following tasks:
 * [`scripts:production`](#scripts)
 * [`templates`](#templates)
 
-#### watch
+### watch
 
 Run `gulp watch` to start webserver, watch files and livereload with browsersync. Uses the `gulp-watch` plugin to correctly handle new files while watching.
 
@@ -80,46 +80,46 @@ Runs the tasks:
 Uses:
 * `gulp-watch`
 
-#### clean
+### clean
 Deletes entire build folder.
 
-Uses:
+Plugins:
 * `del` plugin
 
-#### bower
+### bower
 Checks if bower dependencies specified in the `bower.json` file are installed, and if not, installs them.
 
-Uses:
+Plugins:
 * `gulp-bower`
 
-#### images
+### images
 Minifies images and distributes them to the build asset folder
 
-Uses:
+Plugins:
 * `gulp-images`
 * `gulp-changed`
 
-#### svg:sprites
+### svg:sprites
 Create a SVG sprite from icons in the configured folder
 
-Uses:
+Plugins:
 * `gulp-images`
 * `gulp-svgstore`
 
-#### scripts
+### scripts
 Concatenates, uglifies and distributes `.js` files to build folder.
 * `gulp-concat`
 * `gulp-rename`
 * `gulp-uglify`
 * `gulp-if`
 
-#### scripts:standalone
+### scripts:standalone
 Distributes standalone scripts to the build folder. Use for modernizr or other scripts that should be included standalone.
 
-Uses:
+Plugins:
 * `gulp-changed`
 
-#### styles
+### styles
 Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In the corresponding config file it's possible to define bower packages with `includePaths` to easily define them with `@imports` in your .scss file. By default, the following paths are added"
 
 * `./bower_components/normalize-scss/`
@@ -128,38 +128,38 @@ Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In t
 
 Images should be added with the following path: `../../assets/img/test.jpg` due to some unfixed misconfiguration with the rev'ing (see Bugs and Todo's)
 
-Uses:
+Plugins:
 * `gulp-sass`
 * `gulp-sourcemaps`
 * `gulp-autoprefixer`
 * `gulp-if`
 
 
-#### styles:production
+### styles:production
 Compile `/sass` to css and autoprefix. Doesn't minify as the css files will be rev'ed and minified after compilation.
 
-Uses:
+Plugins:
 * `gulp-sass`
 * `gulp-autoprefixer`
 * `gulp-rename`
 
-#### templates
+### templates
 Generates html files from jade template. Every jade template prefixed with an underscore will not be built into a html file. To speed up the templating process `gulp-jade-inheritance` is used to check which template is dependent on which partial.
 
-Uses:
+Plugins:
 * `gulp-jade`
 * `gulp-jade-inheritance`
 * `gulp-changed`
 * `gulp-if`
 * `gulp-filter`
 
-#### browsersync
+### browsersync
 Start browsersync server
 
-Uses:
+Plugins:
 * `browser-sync`
 
-#### setwatch
+### setwatch
 Sets a global `isWatching` variable to `true`. Use to execute certain tasks, functions or configurations only when `gulp watch` is running.
 
 ## Bugs and to-do's
