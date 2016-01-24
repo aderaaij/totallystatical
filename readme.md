@@ -2,30 +2,30 @@
 
 A barebone static site generator / rapid prototyping tool leveraging the awesome powers of Gulp and Webpack for all the heavy lifting.
 
-### Requirements:
+## Requirements:
 
 * [Node]( https://nodejs.org/download/ )
 
-### Installation:
+## Installation:
 * run `npm install` to install all node dependencies
 * run `gulp` to install bower dependencies, build the app and start watching!
 * run `gulp build:production` to create a production build
 
-### Features:
-* **Sass/CSS**
+## Features:
+* **Sass/CSS**:
   * Blazing fast Node Sass(libsass) parser
   * Sass Sourcemaps for development
   * CSS prefixing with [autoprefixer](https://github.com/postcss/autoprefixer)
   * CSS minifying with [cssnano](http://cssnano.co/)
-* **Javascript**
+* **Javascript**:
   * ES6 support with babel and webpack
   * Source maps
 * **Templating**:
   * [Jade templating language](http://jade-lang.com/) with partials support
-* **Development**
+* **Development**:
   * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
   * Source maps
-* **Deployment**
+* **Deployment**:
   * Blazing fast FTP deploys with [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)
   * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
 * **Bower support**: Automatically check and install bower packages.
@@ -33,12 +33,24 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
     * [Susy v2]( http://susy.oddbird.net/ )
     * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
     * [Breakpoint]( http://breakpoint-sass.com/ )
-* **Images**
+* **Images**:
   * Image minifying with imagemin
   * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
   * Easy Jade mixin to create `<use>` code for SVG sprite icons
-* **Revisioning / cache busting**
+* **Revisioning / cache busting**:
   Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
+
+## Usage
+Clone this package to a local folder and run `npm install` to install all the node dependencies.
+
+### Development mode
+To start developing, run `gulp` from the terminal. This default command will build all your assets in development mode, starts the watch command and a browsersync server which is available on `127.0.0.1:3000`.
+
+### Production
+Run `gulp build:production` to build your production app. This will build and minify your assets into the `/app/build` folder. This will also add a hash to your assets for cachebusting purposes.
+
+### Deployment
+Run either `gulp deloy:ftp` or `gulp deply:sftp` to deploy through FTP or SFTP. To configure, create a `.ftppass.json` file in the root of your project(see `.ftppass-example`)  and fill in the right details. In either `/gulpfile.js/tasks/deployFTP` or `/gulpfile.js/tasks/deploySFTP`, rename the line `var ftppass = require('../../.ftppass-example')` to `var ftppass 			= require('../../.ftppass')` and deploy like the wind. 
 
 ## Tasks
 All tasks are defined in `gulpfile.js/tasks`. Most tasks have a corresponding config file in `gulpfile.js/config`. Some share a config file and some just use `gulpfile.js/index.js`
