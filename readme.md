@@ -1,6 +1,6 @@
 # TotallyStatical site generator
 
-A barebone static site generator / rapid prototype tool leveraging the power of Gulp amd Webpack for all the heavy lifting.
+A barebone static site generator / rapid prototype tool leveraging the power of Gulp and Webpack for all the heavy lifting.
 
 ### Requirements:
 
@@ -16,7 +16,9 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 * Synchronized browser testing with BrowserSync
 * Jade templating with partials support*
 * Blazing fast Node Sass (LibSass) parser
-* Bower support. Includes the following Sass packaged by default:
+* SCSS Sourcemaps
+* CSS autoprefixing and minifying
+* Bower support. Includes the following Sass packages by default:
   * [Susy v2]( http://susy.oddbird.net/ )
   * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
   * [Breakpoint]( http://breakpoint-sass.com/ )
@@ -24,6 +26,7 @@ A barebone static site generator / rapid prototype tool leveraging the power of 
 * Minifying images
 * Creating SVG sprites with Svgstore
 * Modular tasks and config files
+* Deploying with either ftp or sftp
 * Revisioning / cache busting of static assets with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
 ## Tasks
@@ -110,13 +113,12 @@ Uses:
 * `gulp-if`
 
 
-#### styles:standalone
-Compile `/sass`, to css, autoprefix and minify. Doesn't generate source maps
+#### styles:production
+Compile `/sass` to css and autoprefix. Doesn't minify as the css files will be rev'ed and minified after compilation.
 
 Uses:
 * `gulp-sass`
 * `gulp-autoprefixer`
-* `gulp-minify-css`
 * `gulp-rename`
 
 #### templates
@@ -136,12 +138,17 @@ Uses:
 * `browser-sync`
 
 #### setwatch
-Sets a global `isWatching` variable to `true`. Use to execute certain taks, functions or configurations only when `gulp watch` is running.
+Sets a global `isWatching` variable to `true`. Use to execute certain tasks, functions or configurations only when `gulp watch` is running.
 
 ## Bugs and to-do's
 
 * Fix background images / rev'ed assets referenced from CSS.
 * Add a build task without any revisioning / cache busting.
 
+## Changelog
+
 ## Credits
 Much credit goes out to the [gulp-starter repo](https://github.com/vigetlabs/gulp-starter) from Viget Labs(https://github.com/vigetlabs/).
+
+## Licensing
+Copyright (c) 2015 - 2016 Arden de Raaij. Licensed under the [MIT license(MIT)](https://opensource.org/licenses/MIT)
