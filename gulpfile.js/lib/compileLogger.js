@@ -8,7 +8,7 @@ module.exports = function(err, stats) {
   var statColor = stats.compilation.warnings.length < 1 ? 'green' : 'yellow'
 
   if(stats.compilation.errors.length > 0) {
-    stats.compilation.errors.forEach(function(error){
+    stats.compilation.errors.forEach((error) => {
       handleErrors(error)
       statColor = 'red'
     })

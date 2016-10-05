@@ -9,10 +9,10 @@ var svgSprite     = require('../config/svgsprite')
 var plugins       = require('gulp-load-plugins')()
 
 var watchTask = function() {
-  plugins.watch(templates.source, function() { gulp.start('pug:watch') })
-  plugins.watch(styles.base, function() { gulp.start('styles') })
-  plugins.watch(images.source, function() { gulp.start('images') })
-  plugins.watch(svgSprite.source, function() { gulp.start('svg:sprite') })
+  plugins.watch(templates.source, () => { gulp.start('pug:watch') })
+  plugins.watch(styles.base, () => { gulp.start('styles') })
+  plugins.watch(images.source, () => { gulp.start('images') })
+  plugins.watch(svgSprite.source,() => { gulp.start('svg:sprite') })
 }
 
 gulp.task('watch', ['browserSync','setWatch', 'templates', 'webpack:watch'], watchTask)

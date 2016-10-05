@@ -5,7 +5,7 @@ var path    = require('path')
 var webpack = require('webpack')
 
 var webpackProductionTask = function(callback) {
-  webpack(config, function(err, stats) {
+  webpack(config, (err, stats) => {
     logger(err, stats)
     callback()
   })
