@@ -172,7 +172,8 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 ### v1.2.1
 **05/10/2016**
 * Updated Babel 5 to Babel 6, reconfigured webpack config
-* Updated plugins
+* Updated node dependencies
+* Locked bower dependencies to version
 
 ### v1.1.0
 **24/01/2016**
