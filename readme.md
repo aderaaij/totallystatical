@@ -162,9 +162,11 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 
 ## Changelog
 
-### v1.2.1
+### v2.0.0
 **05/10/2016**
+Bumped the version to 2.0 as I did some major updates on the plugins/components
 * Updated Babel 5 to Babel 6, reconfigured Webpack config
+* Updated Jade(deprecated) to Pug
 * Updated Node dependencies
 * Removed Bower package manager and dependencies
 * Added Susy, Normalize-SCSS and Breakpoint-Sass as Node modules
