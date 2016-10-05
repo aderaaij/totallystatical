@@ -30,7 +30,7 @@ var templatesTask = function() {
   .on('error', errorHandler)
 
   // Output Jade
-  .pipe(plugins.jade({pretty: true}))
+  .pipe(plugins.pug({pretty: true}))
 
   // Catch errors
   .on('error', errorHandler)
