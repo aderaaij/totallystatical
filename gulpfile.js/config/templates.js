@@ -1,9 +1,11 @@
 var config = require('./')
 
 module.exports = {
-  source: config.sourcePath+'jade/**/*.jade',
+  source: config.sourcePath+'templates/**/*.pug',
   dest: config.buildPath,
-  jadeInheritance: {
-    "basedir": config.sourcePath+'jade/'
+  pugInheritance: {
+    basedir: config.sourcePath+'templates/',
+    skip: 'node_modules',
+    extension: '.pug'
   }
 }

@@ -14,15 +14,15 @@ var templatesTask = function() {
   .on('error', errorHandler)
 
   // Cache templates if watching
-  .pipe(plugins.if(global.isWatching, plugins.cached('jade')))
+  .pipe(plugins.if(global.isWatching, plugins.cached('pug')))
 
   // Watch partials for change
-  .pipe(plugins.jadeInheritance(config.jadeInheritance))
+  .pipe(plugins.pugInheritance(config.pugInheritance))
 
   .on('error', errorHandler)
 
   // Ignore build of files starting with _
-  .pipe(plugins.filter(function (file) {
+  .pipe(plugins.filter(file => {
     return !/\/_/.test(file.path) && !/^_/.test(file.relative)
   }))
 

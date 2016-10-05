@@ -1,4 +1,4 @@
-include ../mixins/_svgsprite.jade
+include ../mixins/_svgsprite.pug
 
 doctype html
 html(lang="en")
@@ -8,7 +8,7 @@ html(lang="en")
 			title #{pageTitle} - My Static Site
 		link(rel='stylesheet', href='assets/css/screen.css')
 	body(class='#{bodyClass}')
-		
+
 		block content
 
 		script(src='assets/js/script.js')
