@@ -29,7 +29,7 @@ var templatesTask = function() {
   // Catch errors
   .on('error', errorHandler)
 
-  // Output Jade
+  // Output HTML from pug
   .pipe(plugins.pug({pretty: true}))
 
   // Catch errors

@@ -21,7 +21,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
   * ES6 support with babel and webpack
   * Source maps
 * **Templating**:
-  * [Jade templating language](http://jade-lang.com/) with partials support
+  * [Pug templating language](http://jade-lang.com/) with partials support
 * **Development**:
   * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
   * Source maps
@@ -36,7 +36,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * **Images**:
   * Image minifying with imagemin
   * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
-  * Easy Jade mixin to create `<use>` code for SVG sprite icons
+  * Easy Pug mixin to create `<use>` code for SVG sprite icons
 * **Revisioning / cache busting**:
   Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
@@ -137,11 +137,11 @@ Plugins:
 * `gulp-rename`
 
 ### templates
-Generates html files from jade template. Every jade template prefixed with an underscore will not be built into a html file. To speed up the templating process `gulp-jade-inheritance` is used to check which template is dependent on which partial.
+Generates html files from pug template. Every pug template prefixed with an underscore will not be built into a html file. To speed up the templating process `gulp-pug-inheritance` is used to check which template is dependent on which partial.
 
 Plugins:
-* `gulp-jade`
-* `gulp-jade-inheritance`
+* `gulp-pug`
+* `gulp-pug-inheritance`
 * `gulp-changed`
 * `gulp-if`
 * `gulp-filter`

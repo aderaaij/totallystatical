@@ -9,7 +9,7 @@ var svgSprite     = require('../config/svgsprite')
 var plugins       = require('gulp-load-plugins')()
 
 var watchTask = function() {
-  plugins.watch(templates.source, function() { gulp.start('jade:watch') })
+  plugins.watch(templates.source, function() { gulp.start('pug:watch') })
   plugins.watch(styles.base, function() { gulp.start('styles') })
   plugins.watch(images.source, function() { gulp.start('images') })
   plugins.watch(svgSprite.source, function() { gulp.start('svg:sprite') })

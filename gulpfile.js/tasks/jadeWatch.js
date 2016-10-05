@@ -1,4 +1,4 @@
 var gulp                = require('gulp')
 var browserSync         = require('browser-sync')
 
-gulp.task('jade:watch', ['templates'], browserSync.reload)
+gulp.task('pug:watch', ['templates'], browserSync.reload)
