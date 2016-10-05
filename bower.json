@@ -11,8 +11,8 @@
     "bower_components"
   ],
   "dependencies": {
-    "normalize-scss": "latest",
-    "susy": "latest",
-    "compass-breakpoint": "latest"
+    "normalize-scss": "^3.0",
+    "susy": "^2.2",
+    "compass-breakpoint": "^2.7"
   }
 }
