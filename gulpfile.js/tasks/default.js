@@ -5,9 +5,6 @@ var defaultTask = function(cb) {
   gulpSequence(
     'clean',
     [
-      'bower'
-    ],
-    [
       'images',
       'svg:sprite'
     ],

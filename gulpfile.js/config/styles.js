@@ -8,9 +8,9 @@ module.exports = {
   settings: {
     outputStyle: 'nested',
     includePaths: [
-      './bower_components/normalize-scss/',
-      './bower_components/susy/sass/',
-      './bower_components/compass-breakpoint/stylesheets/'
+      './node_modules/normalize-scss/sass/',
+      './node_modules/susy/sass/',
+      './node_modules/breakpoint-sass/stylesheets/'
     ]
   }
 }

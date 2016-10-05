@@ -5,9 +5,6 @@ var buildProductionTask = function(cb) {
   plugins.sequence(
     'clean',
     [
-      'bower'
-    ],
-    [
       'images',
       'svg:sprite',
       'scripts:standalone'

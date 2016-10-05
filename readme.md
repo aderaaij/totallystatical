@@ -8,7 +8,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 
 ## Installation:
 * run `npm install` to install all node dependencies
-* run `gulp` to install bower dependencies, build the app and start watching!
+* run `gulp` to build the app and start watching!
 * run `gulp build:production` to create a production build
 
 ## Features:
@@ -28,7 +28,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * **Deployment**:
   * Blazing fast FTP deploys with [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)
   * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
-* **Bower support**: Automatically check and install bower packages.
+* **Sass Packages**:
   * Includes the following Sass packages by default:
     * [Susy v2]( http://susy.oddbird.net/ )
     * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
@@ -61,7 +61,6 @@ Cleans, builds app and enables watch tasks
 ### build:production
 Builds app with minified assets. Runs the following tasks:
 * [`clean`](#clean)
-* [`bower`](#bower)
 * [`images`](#images)
 * [`styles:production`](#stylesproduction)
 * [`scripts:standalone`](#scriptsstandalone)
@@ -85,12 +84,6 @@ Deletes entire build folder.
 
 Plugins:
 * `del` plugin
-
-### bower
-Checks if bower dependencies specified in the `bower.json` file are installed, and if not, installs them.
-
-Plugins:
-* `gulp-bower`
 
 ### images
 Minifies images and distributes them to the build asset folder
@@ -120,11 +113,11 @@ Plugins:
 * `gulp-changed`
 
 ### styles
-Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In the corresponding config file it's possible to define bower packages with `includePaths` to easily define them with `@imports` in your .scss file. By default, the following paths are added"
+Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In the corresponding config file it's possible to define node modules with `includePaths` to easily define them with `@imports` in your .scss file. By default, the following paths are added"
 
-* `./bower_components/normalize-scss/`
-* `./bower_components/susy/sass/`
-* `./bower_components/compass-breakpoint/stylesheets/`
+* `./node_modules/normalize-scss/sass/`
+* `./node_modules/susy/sass/`
+* `./node_modules/breakpoint-sass/stylesheets/`
 
 Images should be added with the following path: `../../assets/img/test.jpg` due to some unfixed misconfiguration with the rev'ing (see Bugs and Todo's)
 
@@ -173,7 +166,7 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 **05/10/2016**
 * Updated Babel 5 to Babel 6, reconfigured webpack config
 * Updated node dependencies
-* Locked bower dependencies to version
+* Removed bower dependencies
 
 ### v1.1.0
 **24/01/2016**
