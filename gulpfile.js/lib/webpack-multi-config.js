@@ -20,8 +20,13 @@ module.exports = function(env) {
       loaders: [
         {
           test: /\.js$/,
-          loader: 'babel-loader?stage=1',
-          exclude: /node_modules/
+          loader: 'babel',
+          query: {
+            // https://github.com/babel/babel-loader#options
+            cacheDirectory: true,
+            presets: ['es2015', 'stage-2']
+          },
+          exclude: /(node_modules|bower_components)/
         }
       ]
     },
