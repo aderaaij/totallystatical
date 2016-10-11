@@ -66,6 +66,10 @@
     "require-dir": "^0.3.0",
     "susy": "^2.2.12",
     "vinyl-ftp": "^0.5.0",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "imagemin-gifsicle": "^5.0.0",
+    "imagemin-jpegtran": "^5.0.0",
+    "imagemin-optipng": "^5.1.0",
+    "imagemin-svgo": "^5.1.0"
   }
 }
