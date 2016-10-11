@@ -162,6 +162,10 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 
 ## Changelog
 
+### v2.0.1
+**11/10/2016**
+* Temporarily added the optional Dependencies from `gulp-imagemin` to the `package.json` to meet dependencies for [Yarn package manager](https://github.com/yarnpkg/yarn/)
+
 ### v2.0.0
 **05/10/2016**
 Bumped the version to 2.0 as I did some major updates on the plugins/components
