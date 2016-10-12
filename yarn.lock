@@ -976,9 +976,9 @@ browser-sync-ui@0.6.1:
     stream-throttle "^0.1.3"
     weinre "^2.0.0-pre-I0Z7U9OV"
 
-browser-sync@^2.7.13:
-  version "2.17.2"
-  resolved "https://registry.yarnpkg.com/browser-sync/-/browser-sync-2.17.2.tgz#d4eaf87acb890b5aed0893c812af8a9268e76a1b"
+browser-sync@^2.17.3:
+  version "2.17.3"
+  resolved "https://registry.yarnpkg.com/browser-sync/-/browser-sync-2.17.3.tgz#d3d369607fdcbf0729a14502d5fed43a2217b074"
   dependencies:
     browser-sync-client "^2.3.3"
     browser-sync-ui "0.6.1"
@@ -1557,7 +1557,15 @@ dateformat@^1.0.11:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
-debug@^2.1.1, debug@^2.2.0, debug@~2.2.0, debug@2.2.0:
+debug-fabulous@0.0.X:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/debug-fabulous/-/debug-fabulous-0.0.4.tgz#fa071c5d87484685424807421ca4b16b0b1a0763"
+  dependencies:
+    debug "2.X"
+    lazy-debug-legacy "0.0.X"
+    object-assign "4.1.0"
+
+debug@^2.1.1, debug@^2.2.0, debug@~2.2.0, debug@2.2.0, debug@2.X:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
@@ -2812,17 +2820,18 @@ gulp-sourcemaps@^1.5.2:
     through2 "2.X"
     vinyl "1.X"
 
-gulp-sourcemaps@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-sourcemaps/-/gulp-sourcemaps-2.0.0.tgz#ec53ecfbb7d706bf2bd398f9208c2a127d8eb3e4"
+gulp-sourcemaps@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/gulp-sourcemaps/-/gulp-sourcemaps-1.7.3.tgz#a468a2801996c969e47476fcc6dcd5a7e2aa53c1"
   dependencies:
     acorn "4.X"
     convert-source-map "1.X"
     css "2.X"
+    debug-fabulous "0.0.X"
     detect-newline "2.X"
     graceful-fs "4.X"
     source-map "0.X"
-    strip-bom "3.X"
+    strip-bom "2.X"
     through2 "2.X"
     vinyl "1.X"
 
@@ -3584,6 +3593,10 @@ klaw@^1.0.0:
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
+
+lazy-debug-legacy@0.0.X:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/lazy-debug-legacy/-/lazy-debug-legacy-0.0.1.tgz#537716c0776e4cf79e3ed1b621f7658c2911b1b1"
 
 lazy-req@^1.0.0:
   version "1.1.0"
@@ -4374,7 +4387,7 @@ object-assign@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
 
-object-assign@^4.0.0, object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@^4.0.0, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
 
@@ -5804,10 +5817,6 @@ strip-bom@^2.0.0, strip-bom@2.X:
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-2.0.0.tgz#6219a85616520491f35788bdbf1447a99c7e6b0e"
   dependencies:
     is-utf8 "^0.2.0"
-
-strip-bom@3.X:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
 
 strip-dirs@^1.0.0:
   version "1.1.1"
