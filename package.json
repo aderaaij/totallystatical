@@ -18,7 +18,9 @@
     "url": "https://github.com/aderaaij/totallystatical/issues"
   },
   "homepage": "https://github.com/aderaaij/totallystatical",
-  "dependencies": {},
+  "dependencies": {
+    "normalize-scss": "^6.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
@@ -58,17 +60,17 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.3.10",
+    "imagemin-gifsicle": "^5.0.0",
+    "imagemin-jpegtran": "^5.0.0",
+    "imagemin-optipng": "^5.1.0",
+    "imagemin-svgo": "^5.1.0",
     "install": "^0.8.1",
     "morgan": "^1.6.1",
-    "normalize-scss": "^5.0.3",
+    "normalize-scss": "^6.0.0",
     "open": "0.0.5",
     "require-dir": "^0.3.0",
     "susy": "^2.2.12",
     "vinyl-ftp": "^0.5.0",
-    "webpack": "^1.13.2",
-    "imagemin-gifsicle": "^5.0.0",
-    "imagemin-jpegtran": "^5.0.0",
-    "imagemin-optipng": "^5.1.0",
-    "imagemin-svgo": "^5.1.0"
+    "webpack": "^1.13.2"
   }
 }
