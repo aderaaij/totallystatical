@@ -1,6 +1,6 @@
 {
   "name": "totallystatical",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A static site generator based on Gulp",
   "repository": {
     "type": "git",
@@ -18,10 +18,7 @@
     "url": "https://github.com/aderaaij/totallystatical/issues"
   },
   "homepage": "https://github.com/aderaaij/totallystatical",
-  "dependencies": {
-    "normalize-scss": "^6.0.0",
-    "require-dir": "^0.3.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
@@ -31,12 +28,12 @@
     "breakpoint-sass": "^2.7.0",
     "browser-sync": "^2.17.3",
     "compression": "^1.6.2",
-    "del": "^2.0.2",
+    "del": "^3.0.0",
     "express": "^4.13.3",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-cached": "^1.1.0",
-    "gulp-changed": "^1.3.2",
+    "gulp-changed": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-filter": "^5.0.0",
@@ -45,7 +42,7 @@
     "gulp-imagemin": "^3.0.3",
     "gulp-jshint": "^2.0.1",
     "gulp-load-plugins": "^1.2.0",
-    "gulp-notify": "^2.2.0",
+    "gulp-notify": "^3.0.0",
     "gulp-pug": "^3.1.0",
     "gulp-pug-inheritance": "^0.2.1",
     "gulp-rename": "^1.2.0",
@@ -58,20 +55,20 @@
     "gulp-sizereport": "^1.2.0",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-svgstore": "^6.0.0",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.3.10",
     "imagemin-gifsicle": "^5.0.0",
     "imagemin-jpegtran": "^5.0.0",
     "imagemin-optipng": "^5.1.0",
     "imagemin-svgo": "^5.1.0",
-    "install": "^0.8.1",
+    "install": "^0.10.1",
     "morgan": "^1.6.1",
-    "normalize-scss": "^6.0.0",
+    "normalize-scss": "^7.0.0",
     "open": "0.0.5",
     "require-dir": "^0.3.2",
-    "susy": "^2.2.12",
-    "vinyl-ftp": "^0.5.0",
-    "webpack": "^1.13.2"
+    "susy": "^3.0.0",
+    "vinyl-ftp": "^0.6.0",
+    "webpack": "^1.15.0"
   }
 }
