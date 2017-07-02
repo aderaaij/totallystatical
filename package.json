@@ -21,7 +21,7 @@
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.5",
+    "babel-loader": "^7.1.1",
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-2": "^6.17.0",
@@ -69,6 +69,6 @@
     "require-dir": "^0.3.2",
     "susy": "^3.0.0",
     "vinyl-ftp": "^0.6.0",
-    "webpack": "^1.15.0"
+    "webpack": "^3.0.0"
   }
 }

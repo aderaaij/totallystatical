@@ -12,7 +12,7 @@ module.exports = function(env) {
     cache: false,
     entry: config.entries,
     output: {
-      path: path.normalize(config.dest),
+      path: path.resolve(__dirname, '../../app/build/assets/js/'),
       publicPath: '/js/',
       filename: filenamePattern
     },
@@ -20,7 +20,7 @@ module.exports = function(env) {
       loaders: [
         {
           test: /\.js$/,
-          loader: 'babel',
+          loader: 'babel-loader',
           query: {
             // https://github.com/babel/babel-loader#options
             cacheDirectory: true,
