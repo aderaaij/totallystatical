@@ -162,6 +162,10 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 
 ## Changelog
 
+### v2.1.0
+**02/07/2017**
+* Updated all packages to the latest versions, including Susy 3.0 and WebPack 3.0
+
 ### v2.0.1
 **11/10/2016**
 * Temporarily added the optional Dependencies from `gulp-imagemin` to the `package.json` to meet dependencies for [Yarn package manager](https://github.com/yarnpkg/yarn/)
