@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
 
-const buildProductionTask = function (cb) {
+const buildProduction = function buildProductionTask(cb) {
     plugins.sequence(
     'clean',
         [
@@ -18,5 +18,5 @@ const buildProductionTask = function (cb) {
     cb,
   );
 };
-gulp.task('build:production', buildProductionTask);
-module.exports = buildProductionTask;
+gulp.task('build:production', buildProduction);
+module.exports = buildProduction;

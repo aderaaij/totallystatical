@@ -15,7 +15,7 @@ const ftpcreds = {
     debug: false,
 };
 
-const deployFTP = function () {
+function deployFTP() {
     const conn = ftp.create(ftpcreds);
     const globs = [
         `${config.buildPath}**/*`,
@@ -25,7 +25,7 @@ const deployFTP = function () {
     return gulp.src(globs, { base: config.buildPath, buffer: false })
         .pipe(conn.newer(ftppass.remotePath)) // only upload newer files
         .pipe(conn.dest(ftppass.remotePath));
-};
+}
 
 gulp.task('deploy:ftp', ['build:production'], deployFTP);
 module.exports = deployFTP;

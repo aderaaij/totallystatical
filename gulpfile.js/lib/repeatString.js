@@ -1,4 +1,4 @@
-module.exports = function (pattern, number) {
+module.exports = function repeatString(pattern, number) {
     let string = '';
     while (number > 0) {
         number--;

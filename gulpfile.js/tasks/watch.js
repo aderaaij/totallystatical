@@ -1,14 +1,11 @@
-const browserSync = require('browser-sync');
 const gulp = require('gulp');
-const config = require('../config/index');
 const templates = require('../config/templates');
 const styles = require('../config/styles');
-const scripts = require('../config/scripts');
 const images = require('../config/images');
-const svgSprite = require('../config/svgsprite');
+const svgSprite = require('../config/svgSprite');
 const plugins = require('gulp-load-plugins')();
 
-const watchTask = function () {
+const watchTask = function defaultWatchTask() {
     plugins.watch(templates.source, () => { gulp.start('pug:watch'); });
     plugins.watch(styles.base, () => { gulp.start('styles'); });
     plugins.watch(images.source, () => { gulp.start('images'); });

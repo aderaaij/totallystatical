@@ -2,7 +2,7 @@ const gutil = require('gulp-util');
 const prettifyTime = require('./prettifyTime');
 const handleErrors = require('./errorHandler');
 
-module.exports = function (err, stats) {
+module.exports = function compileLogger(err, stats) {
     if (err) throw new gutil.PluginError('webpack', err);
 
     let statColor = stats.compilation.warnings.length < 1 ? 'green' : 'yellow';

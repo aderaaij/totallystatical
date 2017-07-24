@@ -5,7 +5,7 @@ const config = require('../config/index');
 // Rename the .ftppass-example.json file to .ftppass.json and change the referred name here
 const ftppass = require('../../.ftppass-example');
 
-const deploySFTP = function () {
+const sftp = function deploySFTP() {
     return gulp.src(`${config.buildPath}**/*`)
     .pipe(plugins.sftp({
         host: ftppass.host,
@@ -16,5 +16,5 @@ const deploySFTP = function () {
     }));
 };
 
-gulp.task('deploy:sftp', ['build:production'], deploySFTP);
-module.exports = deploySFTP;
+gulp.task('deploy:sftp', ['build:production'], sftp);
+module.exports = sftp;

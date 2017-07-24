@@ -1,43 +1,43 @@
-const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
 const config = require('../config/templates');
 const errorHandler = require('../lib/errorHandler');
 
-const templatesTask = function () {
+const templatesTask = function startTemplateTask() {
     return gulp.src(config.source)
 
-  // Only build changed files
-  .pipe(plugins.changed(config.dest, { extension: '.html' }))
+    // Only build changed files
+    .pipe(plugins.changed(config.dest, { extension: '.html' }))
 
-  // Catch errors
-  .on('error', errorHandler)
+    // Catch errors
+    .on('error', errorHandler)
 
-  // Cache templates if watching
-  .pipe(plugins.if(global.isWatching, plugins.cached('pug')))
+    // Cache templates if watching
+    .pipe(plugins.if(global.isWatching, plugins.cached('pug')))
 
-  // Watch partials for change
-  .pipe(plugins.pugInheritance(config.pugInheritance))
+    // Watch partials for change
+    .pipe(plugins.pugInheritance(config.pugInheritance))
 
-  .on('error', errorHandler)
+    .on('error', errorHandler)
 
-  // Ignore build of files starting with _
-  .pipe(plugins.filter(file => !/\/_/.test(file.path) && !/^_/.test(file.relative)))
+    // Ignore build of files starting with _
+    .pipe(plugins.filter(file => !/\/_/.test(file.path) && !/^_/.test(file.relative)))
 
-  // Catch errors
-  .on('error', errorHandler)
+    // Catch errors
+    .on('error', errorHandler)
 
-  // Output HTML from pug
-  .pipe(plugins.pug({ pretty: true }))
+    // Output HTML from pug
+    .pipe(plugins.pug({ pretty: true }))
 
-  // Catch errors
-  .on('error', errorHandler)
+    // Catch errors
+    .on('error', errorHandler)
 
-  // Distribute to build path
-  .pipe(gulp.dest(config.dest))
+    // Distribute to build path
+    .pipe(gulp.dest(config.dest))
 
-  // Show notification
-  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
+    // Show notification
+    .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
 };
+
 gulp.task('templates', templatesTask);
 module.exports = templatesTask;

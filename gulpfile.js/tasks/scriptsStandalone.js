@@ -4,20 +4,20 @@ const plugins = require('gulp-load-plugins')();
 const config = require('../config/scriptsStandalone');
 
 // Copy files
-const scriptsStandalone = function () {
-  // Standalone scripts
+const scriptsStandalone = function startScriptsStandalone() {
+    // Standalone scripts
     gulp.src(config.source)
 
-  // only copy files that have been changed (on watch)
-  .pipe(plugins.changed(config.dest))
+    // only copy files that have been changed (on watch)
+    .pipe(plugins.changed(config.dest))
 
-  // Distribute to build
-  .pipe(gulp.dest(config.dest))
+    // Distribute to build
+    .pipe(gulp.dest(config.dest))
 
-  .pipe(browserSync.stream())
+    .pipe(browserSync.stream())
 
-  // If is watching
-  .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Standalone scripts task complete' })));
+    // If is watching
+    .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Standalone scripts task complete' })));
 };
 
 gulp.task('scripts:standalone', scriptsStandalone);

@@ -1,10 +1,9 @@
-const browserSync = require('browser-sync');
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
 const config = require('../config/styles');
 const errorHandler = require('../lib/errorHandler');
 
-const stylesProductionTask = function (cb) {
+const stylesProduction = function stylesProductionTask() {
     return gulp.src(config.source)
 
     .pipe(plugins.sass(config.settings))
@@ -15,5 +14,6 @@ const stylesProductionTask = function (cb) {
 
     .pipe(gulp.dest(config.dest));
 };
-gulp.task('styles:production', stylesProductionTask);
-module.exports = stylesProductionTask;
+
+gulp.task('styles:production', stylesProduction);
+module.exports = stylesProduction;

@@ -6,7 +6,7 @@ const logger = require('morgan');
 const open = require('open');
 const plugins = require('gulp-load-plugins')();
 
-const serverTask = function () {
+const server = function startServer() {
     const url = `http://localhost:${config.port}`;
 
     express()
@@ -19,5 +19,5 @@ const serverTask = function () {
     open(url);
 };
 
-gulp.task('server', serverTask);
-module.exports = serverTask;
+gulp.task('server', server);
+module.exports = server;

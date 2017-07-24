@@ -4,7 +4,6 @@ const cssnano = require('gulp-cssnano');
 const path = require('path');
 const rev = require('gulp-rev');
 const revNapkin = require('gulp-rev-napkin');
-const uglify = require('gulp-uglify');
 
 // 4) Rev and compress CSS and JS files (this is done after assets, so that if a
 //    referenced asset hash changes, the parent hash will change as well

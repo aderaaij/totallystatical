@@ -1,9 +1,9 @@
 mixin svg(id, viewbox, className)
 	if viewbox
 		svg(viewbox='#{viewbox}', class!=className)
-			use(xlink:href='assets/img/sprite.svg##{id}')
+			use(xlink:href='assets/img/sprite.svg#' + id)
 	else
 		svg(viewbox='0 0 50 50', class!=className)
-			use(xlink:href='assets/img/sprite.svg##{id}')
+			use(xlink:href='assets/img/sprite.svg#' + id)
 
 //- Usage: +svg('symbolID', 'viewbox parameters', 'classnames')
