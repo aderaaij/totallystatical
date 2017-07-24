@@ -12,32 +12,32 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * run `gulp build:production` to create a production build
 
 ## Features:
-* **Sass/CSS**:
+* **💃 Sass/CSS**:
   * Blazing fast Node Sass(libsass) parser
   * Sass Sourcemaps for development
   * CSS prefixing with [autoprefixer](https://github.com/postcss/autoprefixer)
   * CSS minifying with [cssnano](http://cssnano.co/)
-* **Javascript**:
+* **🤓 Javascript**:
   * ES6 support with babel and webpack
   * Source maps
-* **Templating**:
+* **🍕 Templating**:
   * [Pug templating language](http://jade-lang.com/) with partials support
-* **Development**:
+* **👩‍💻 Development**:
   * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
   * Source maps
-* **Deployment**:
+* **🚀 Deployment**:
   * Blazing fast FTP deploys with [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)
   * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
-* **Sass Packages**:
+* **📦 Sass Packages**:
   * Includes the following Sass packages by default:
     * [Susy v2]( http://susy.oddbird.net/ )
     * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
     * [Breakpoint]( http://breakpoint-sass.com/ )
-* **Images**:
+* **📷 Images**:
   * Image minifying with imagemin
   * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
   * Easy Pug mixin to create `<use>` code for SVG sprite icons
-* **Revisioning / cache busting**:
+* **🐍Revisioning / cache busting**:
   Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
 ## Usage 👩‍💻
