@@ -166,6 +166,7 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 **24/07/2017**
 * 🚀 Update all packages to the latest versions
 * 🛁 Clean up of the gulpfile.js, now consistently coded and linted
+* ⚒ Fix problem with new inline pug variables
 
 ### v2.1.0
 **02/07/2017**
