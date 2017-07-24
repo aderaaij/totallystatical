@@ -1,4 +1,4 @@
-# TotallyStatical site generator
+# 🏄 TotallyStatical site generator
 
 A barebone static site generator / rapid prototyping tool leveraging the awesome powers of Gulp and Webpack for all the heavy lifting.
 
@@ -40,7 +40,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * **Revisioning / cache busting**:
   Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
-## Usage
+## Usage 👩‍💻
 Clone this package to a local folder and run `npm install` to install all the node dependencies.
 
 ### Development mode
