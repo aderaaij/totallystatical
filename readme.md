@@ -67,7 +67,7 @@ Builds app with minified assets. Runs the following tasks:
 * [`scripts:production`](#scripts)
 * [`templates`](#templates)
 
-### watch
+### watch 👀
 
 Run `gulp watch` to start webserver, watch files and livereload with browsersync. Uses the `gulp-watch` plugin to correctly handle new files while watching.
 
@@ -85,7 +85,7 @@ Deletes entire build folder.
 Plugins:
 * `del` plugin
 
-### images
+### images 📷
 Minifies images and distributes them to the build asset folder
 
 Plugins:
@@ -112,7 +112,7 @@ Distributes standalone scripts to the build folder. Use for modernizr or other s
 Plugins:
 * `gulp-changed`
 
-### styles
+### styles 💃
 Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In the corresponding config file it's possible to define node modules with `includePaths` to easily define them with `@imports` in your .scss file. By default, the following paths are added"
 
 * `./node_modules/normalize-scss/sass/`
@@ -152,7 +152,7 @@ Start browsersync server
 Plugins:
 * `browser-sync`
 
-### setwatch
+### setwatch ➡️👀
 Sets a global `isWatching` variable to `true`. Use to execute certain tasks, functions or configurations only when `gulp watch` is running.
 
 ## Bugs and to-do's
@@ -161,6 +161,11 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 * Add a build task without any revisioning / cache busting.
 
 ## Changelog
+
+### v2.2.0
+**24/07/2017**
+* 🚀 Update all packages to the latest versions
+* 🛁 Clean up of the gulpfile.js, now consistently coded and linted
 
 ### v2.1.0
 **02/07/2017**

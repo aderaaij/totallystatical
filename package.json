@@ -18,9 +18,6 @@
     "url": "https://github.com/aderaaij/totallystatical/issues"
   },
   "homepage": "https://github.com/aderaaij/totallystatical",
-  "dependencies": {
-    "enhanced-resolve": "^3.4.1"
-  },
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^7.1.1",
