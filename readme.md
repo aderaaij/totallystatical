@@ -37,7 +37,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
   * Image minifying with imagemin
   * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
   * Easy Pug mixin to create `<use>` code for SVG sprite icons
-* **🐍Revisioning / cache busting**:
+* **🐍 Revisioning / cache busting**:
   Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
 ## Usage 👩‍💻
