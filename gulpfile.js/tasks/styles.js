@@ -1,11 +1,11 @@
-var browserSync         = require('browser-sync')
-var gulp                = require('gulp')
-var plugins             = require('gulp-load-plugins')()
-var config              = require('../config/styles')
-var errorHandler        = require('../lib/errorHandler')
+const browserSync = require('browser-sync');
+const gulp = require('gulp');
+const plugins = require('gulp-load-plugins')();
+const config = require('../config/styles');
+const errorHandler = require('../lib/errorHandler');
 
-var stylesTask = function(cb) {
-  return gulp.src(config.source)
+const stylesTask = function (cb) {
+    return gulp.src(config.source)
 
     .pipe(plugins.sourcemaps.init())
 
@@ -21,7 +21,7 @@ var stylesTask = function(cb) {
 
     .pipe(browserSync.stream())
 
-    .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })))
-}
-gulp.task('styles', stylesTask)
-module.exports = stylesTask
+    .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })));
+};
+gulp.task('styles', stylesTask);
+module.exports = stylesTask;

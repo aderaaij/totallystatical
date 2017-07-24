@@ -1,20 +1,20 @@
-var gulp            = require('gulp')
-var gulpSequence    = require('gulp-sequence')
+const gulp = require('gulp');
+const gulpSequence = require('gulp-sequence');
 
-var defaultTask = function(cb) {
-  gulpSequence(
+const defaultTask = function (cb) {
+    gulpSequence(
     'clean',
-    [
-      'images',
-      'svg:sprite'
-    ],
-    [
-      'scripts:standalone',
-      'styles'
-    ],
+        [
+            'images',
+            'svg:sprite',
+        ],
+        [
+            'scripts:standalone',
+            'styles',
+        ],
     'watch',
-    cb
-  )
-}
-gulp.task('default', defaultTask)
-module.exports = defaultTask
+    cb,
+  );
+};
+gulp.task('default', defaultTask);
+module.exports = defaultTask;

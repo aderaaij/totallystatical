@@ -1,6 +1,6 @@
-var config = require('./')
+const config = require('./');
 
 module.exports = {
-  source: config.sourcePath+'assets/sprite/**/*.svg',
-  dest: config.buildPath+'assets/img/'
-}
+    source: `${config.sourcePath}assets/sprite/**/*.svg`,
+    dest: `${config.buildPath}assets/img/`,
+};

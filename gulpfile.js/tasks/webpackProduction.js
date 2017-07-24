@@ -1,15 +1,15 @@
-var config  = require('../lib/webpack-multi-config')('production')
-var logger  = require('../lib/compileLogger')
-var gulp    = require('gulp')
-var path    = require('path')
-var webpack = require('webpack')
+const config = require('../lib/webpack-multi-config')('production');
+const logger = require('../lib/compileLogger');
+const gulp = require('gulp');
+const path = require('path');
+const webpack = require('webpack');
 
-var webpackProductionTask = function(callback) {
-  webpack(config, (err, stats) => {
-    logger(err, stats)
-    callback()
-  })
-}
+const webpackProductionTask = function (callback) {
+    webpack(config, (err, stats) => {
+        logger(err, stats);
+        callback();
+    });
+};
 
-gulp.task('webpack:production', webpackProductionTask)
-module.exports = webpackProductionTask
+gulp.task('webpack:production', webpackProductionTask);
+module.exports = webpackProductionTask;

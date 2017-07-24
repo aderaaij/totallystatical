@@ -1,8 +1,8 @@
-module.exports = function(pattern, number) {
-    var string = ''
-    while (number > 0){
-      number--
-      string += pattern
+module.exports = function (pattern, number) {
+    let string = '';
+    while (number > 0) {
+        number--;
+        string += pattern;
     }
-    return string
-  }
+    return string;
+};

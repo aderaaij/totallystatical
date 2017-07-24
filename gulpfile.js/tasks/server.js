@@ -1,23 +1,23 @@
-var gulp                = require('gulp')
-var express             = require('express')
-var config              = require('../config/server')
-var compress            = require('compression')
-var logger              = require('morgan')
-var open                = require('open')
-var plugins             = require('gulp-load-plugins')()
+const gulp = require('gulp');
+const express = require('express');
+const config = require('../config/server');
+const compress = require('compression');
+const logger = require('morgan');
+const open = require('open');
+const plugins = require('gulp-load-plugins')();
 
-var serverTask = function() {
-  var url = 'http://localhost:' + config.port
+const serverTask = function () {
+    const url = `http://localhost:${config.port}`;
 
-  express()
+    express()
     .use(compress())
     .use(logger(config.logLevel))
     .use('/', express.static(config.root, config.staticOptions))
-    .listen(config.port)
+    .listen(config.port);
 
-  plugins.util.log('production server started on ' + plugins.util.colors.green(url))
-  open(url)
-}
+    plugins.util.log(`production server started on ${plugins.util.colors.green(url)}`);
+    open(url);
+};
 
-gulp.task('server', serverTask)
-module.exports = serverTask
+gulp.task('server', serverTask);
+module.exports = serverTask;
