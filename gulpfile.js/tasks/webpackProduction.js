@@ -3,7 +3,7 @@ const logger = require('../lib/compileLogger');
 const gulp = require('gulp');
 const webpack = require('webpack');
 
-const webpackProduction = function webpackProductionTask(callback) {
+const webpackProduction = (callback) => {
     webpack(config, (err, stats) => {
         logger(err, stats);
         callback();

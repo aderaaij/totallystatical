@@ -4,7 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackManifest = require('./webpackManifest');
 
-module.exports = function exports(env) {
+const webpackExports = (env) => {
     const filenamePattern = env === 'production' ? '[name]-[hash].js' : '[name].js';
 
     const webpackConfig = {
@@ -39,7 +39,7 @@ module.exports = function exports(env) {
 
     if (env === 'production') {
         webpackConfig.plugins.push(
-            new webpackManifest('/js/', root.buildPath),
+            webpackManifest('/js/', root.buildPath),
             new webpack.DefinePlugin({
                 'process.env': {
                     NODE_ENV: JSON.stringify('production'),
@@ -52,3 +52,5 @@ module.exports = function exports(env) {
 
     return webpackConfig;
 };
+
+module.exports = webpackExports;

@@ -5,7 +5,7 @@ const images = require('../config/images');
 const svgSprite = require('../config/svgSprite');
 const plugins = require('gulp-load-plugins')();
 
-const watchTask = function defaultWatchTask() {
+const watchTask = () => {
     plugins.watch(templates.source, () => { gulp.start('pug:watch'); });
     plugins.watch(styles.base, () => { gulp.start('styles'); });
     plugins.watch(images.source, () => { gulp.start('images'); });

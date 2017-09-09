@@ -1,6 +1,6 @@
 {
   "name": "totallystatical",
-  "version": "2.0.1",
+  "version": "2.3.0",
   "description": "A static site generator based on Gulp",
   "repository": {
     "type": "git",
@@ -69,5 +69,8 @@
     "susy": "^3.0.0",
     "vinyl-ftp": "^0.6.0",
     "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp-replace": "^0.6.1"
   }
 }

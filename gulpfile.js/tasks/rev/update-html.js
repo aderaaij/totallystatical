@@ -7,6 +7,6 @@ const path = require('path');
 gulp.task('update-html', () => {
     const manifest = gulp.src(path.join(config.buildPath, 'rev-manifest.json'));
     return gulp.src(path.join(config.buildPath, '**/*.html'))
-    .pipe(revReplace({ manifest }))
-    .pipe(gulp.dest(config.buildPath));
+        .pipe(revReplace({ manifest }))
+        .pipe(gulp.dest(config.buildPath));
 });

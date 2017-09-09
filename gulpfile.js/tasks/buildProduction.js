@@ -1,9 +1,9 @@
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
 
-const buildProduction = function buildProductionTask(cb) {
+const buildProduction = (cb) => {
     plugins.sequence(
-    'clean',
+        'clean',
         [
             'images',
             'svg:sprite',
@@ -14,9 +14,10 @@ const buildProduction = function buildProductionTask(cb) {
             'webpack:production',
             'templates',
         ],
-    'rev',
-    cb,
-  );
+        'rev',
+        cb,
+    );
 };
+
 gulp.task('build:production', buildProduction);
 module.exports = buildProduction;

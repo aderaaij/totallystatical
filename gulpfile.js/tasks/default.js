@@ -1,9 +1,9 @@
 const gulp = require('gulp');
 const gulpSequence = require('gulp-sequence');
 
-function defaultTask(cb) {
+const defaultTask = (cb) => {
     gulpSequence(
-    'clean',
+        'clean',
         [
             'images',
             'svg:sprite',
@@ -12,9 +12,10 @@ function defaultTask(cb) {
             'scripts:standalone',
             'styles',
         ],
-    'watch',
-    cb,
-  );
-}
+        'watch',
+        cb,
+    );
+};
+
 gulp.task('default', defaultTask);
 module.exports = defaultTask;

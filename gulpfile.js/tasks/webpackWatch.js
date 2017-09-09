@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const webpack = require('webpack');
 const browserSync = require('browser-sync');
 
-const webpackWatch = function webpackWatchTask(callback) {
+const webpackWatch = (callback) => {
     let initialCompile = false;
 
     webpack(webpackConfig('development')).watch(200, (err, stats) => {

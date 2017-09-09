@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-module.exports = function webpackManifest(publicPath, dest, filename) {
+const webpackManifest = (publicPath, dest, filename) => {
     filename = filename || 'rev-manifest.json';
 
     return function webpackManifestInside() {
@@ -24,3 +24,5 @@ module.exports = function webpackManifest(publicPath, dest, filename) {
         });
     };
 };
+
+module.exports = webpackManifest;

@@ -4,9 +4,7 @@ const plugins = require('gulp-load-plugins')();
 const config = require('../config/scriptsStandalone');
 
 // Copy files
-const scriptsStandalone = function startScriptsStandalone() {
-    // Standalone scripts
-    gulp.src(config.source)
+const scriptsStandalone = () => gulp.src(config.source)
 
     // only copy files that have been changed (on watch)
     .pipe(plugins.changed(config.dest))
@@ -18,7 +16,6 @@ const scriptsStandalone = function startScriptsStandalone() {
 
     // If is watching
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Standalone scripts task complete' })));
-};
 
 gulp.task('scripts:standalone', scriptsStandalone);
 module.exports = scriptsStandalone;

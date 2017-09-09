@@ -4,8 +4,7 @@ const plugins = require('gulp-load-plugins')();
 const config = require('../config/styles');
 const errorHandler = require('../lib/errorHandler');
 
-const stylesDefault = function stylesDefaultTask() {
-    return gulp.src(config.source)
+const stylesDefault = () => gulp.src(config.source)
 
     .pipe(plugins.sourcemaps.init())
 
@@ -22,7 +21,6 @@ const stylesDefault = function stylesDefaultTask() {
     .pipe(browserSync.stream())
 
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Styles task complete' })));
-};
 
 gulp.task('styles', stylesDefault);
 module.exports = stylesDefault;

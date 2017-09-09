@@ -3,8 +3,7 @@ const plugins = require('gulp-load-plugins')();
 const config = require('../config/templates');
 const errorHandler = require('../lib/errorHandler');
 
-const templatesTask = function startTemplateTask() {
-    return gulp.src(config.source)
+const templatesTask = () => gulp.src(config.source)
 
     // Only build changed files
     .pipe(plugins.changed(config.dest, { extension: '.html' }))
@@ -37,7 +36,6 @@ const templatesTask = function startTemplateTask() {
 
     // Show notification
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'templates task complete' })));
-};
 
 gulp.task('templates', templatesTask);
 module.exports = templatesTask;

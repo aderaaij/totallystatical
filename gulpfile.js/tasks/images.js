@@ -4,8 +4,7 @@ const plugins = require('gulp-load-plugins')();
 const config = require('../config/images');
 
 // Images
-const images = function imagesTask() {
-    return gulp.src(config.source)
+const images = () => gulp.src(config.source)
 
     // Only add to stream if changed
     .pipe(plugins.changed(config.dest))
@@ -21,7 +20,6 @@ const images = function imagesTask() {
 
     // Show notification if watching
     .pipe(plugins.if(global.isWatching, plugins.notify({ message: 'Images task complete' })));
-};
 
 gulp.task('images', images);
 module.exports = images;

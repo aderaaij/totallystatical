@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
-const setWatch = function setWatchVariable() {
+const setWatch = () => {
     global.isWatching = true;
 };
 

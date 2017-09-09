@@ -3,8 +3,7 @@ const plugins = require('gulp-load-plugins')();
 const config = require('../config/styles');
 const errorHandler = require('../lib/errorHandler');
 
-const stylesProduction = function stylesProductionTask() {
-    return gulp.src(config.source)
+const stylesProduction = () => gulp.src(config.source)
 
     .pipe(plugins.sass(config.settings))
 
@@ -13,7 +12,6 @@ const stylesProduction = function stylesProductionTask() {
     .pipe(plugins.autoprefixer(config.autoprefixer))
 
     .pipe(gulp.dest(config.dest));
-};
 
 gulp.task('styles:production', stylesProduction);
 module.exports = stylesProduction;

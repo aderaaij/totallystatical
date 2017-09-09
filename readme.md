@@ -162,6 +162,14 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 
 ## Changelog
 
+### v2.3.0
+**24/07/2017**
+* ⚒ Fix problem with errorHandler notifyer (switched `..args` for `callback` and `arguments`) in `errorHandler.js`
+* 🐵 Monkey patched the replacement of images assets in css files. `../img/` will be replaced by `../img/assets/`, the cachebusted version will be added and `../img/assets/` will be turned back to `../img/` again.
+* 🚀 Update all packages to the latest versions
+* 🛁 Clean up of the gulpfile.js, now even more consistently coded and linted
+
+
 ### v2.2.0
 **24/07/2017**
 * 🚀 Update all packages to the latest versions
