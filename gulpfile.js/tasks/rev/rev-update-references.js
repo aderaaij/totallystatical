@@ -8,7 +8,7 @@ gulp.task('rev-update-references', () => {
     const manifest = gulp.src(path.join(config.buildPath, 'rev-manifest.json'));
 
     return gulp.src(path.join(config.buildPath, '**/**.{css,js}'))
-        .pipe(plugins.replace('url(../img/', 'url(assets/img/'))
+        .pipe(plugins.replace('../img/', 'assets/img/'))
         .pipe(plugins.revReplace({ manifest }))
         .pipe(gulp.dest(config.buildPath));
 });

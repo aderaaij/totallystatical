@@ -6,7 +6,7 @@ const path = require('path');
 // 4) Rev and compress CSS and JS files (this is done after assets, so that if a
 //    referenced asset hash changes, the parent hash will change as well
 gulp.task('rev-css', () => gulp.src(path.join(config.buildPath, '**/*.css'))
-    .pipe(plugins.replace('url(assets/img/', 'url(../img/'))
+    .pipe(plugins.replace('assets/img/', '../img/'))
     .pipe(plugins.rev())
     .pipe(plugins.cssnano())
     .pipe(gulp.dest(config.buildPath))
