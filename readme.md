@@ -162,6 +162,10 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 
 ## Changelog
 
+### v2.3.2
+**10/09/2017**
+* ⚒ Add `gulp-plumber` to template task to ensure watch task doesn't hang on error. 
+
 ### v2.3.1
 **10/09/2017**
 * ⚒ Fix assetpath in background images for paths without `url()`. 
