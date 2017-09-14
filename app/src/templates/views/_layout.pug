@@ -8,8 +8,8 @@ html(lang="en")
 			title #{pageTitle} - My Static Site
 		link(rel='stylesheet', href='assets/css/screen.css')
 	body(class=bodyClass)
-		- console.log(locals)
-		h1 #{site.title}
+		- console.log(locals.title)
+		h1 #{title}
 		block content
 
 		script(src='assets/js/script.js')
