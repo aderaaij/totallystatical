@@ -1,10 +1,18 @@
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
 const config = require('../config/templates');
+const path = require('path');
+const fs = require('fs');
 const errorHandler = require('../lib/errorHandler');
 
 const templatesTask = () => gulp.src(config.source)
-
+    // .pipe(plugins.data((file) => {
+    //     // console.log(file);
+    //     // require('../../app/src/data/index.js')
+    //     const test = fs.readFileSync('./app/src/data/index.js');
+    //     console.log(test);
+    // }))
+    
     // Only build changed files
     .pipe(plugins.changed(config.dest, { extension: '.html' }))
 
@@ -26,10 +34,11 @@ const templatesTask = () => gulp.src(config.source)
 
     // Catch errors
     .on('error', errorHandler)
-
-    // Use gulp plumber to prevent a hanging watch-task on error
+    
+    // Call plumber to continue task on error
     .pipe(plugins.plumber())
-
+    
+    .pipe(plugins.data(file => JSON.parse(fs.readFileSync('./app/src/data/test.json'))))
     // Output HTML from pug
     .pipe(plugins.pug({ pretty: true }))
 
