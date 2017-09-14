@@ -35,8 +35,8 @@ const templatesTask = () => gulp.src(config.source)
     
     // Call plumber to continue task on error
     .pipe(plugins.plumber())
-    
-    .pipe(plugins.data(file => JSON.parse(fs.readFileSync('./app/src/data/test.json'))))
+
+    .pipe(plugins.data(() => require('../../app/src/data/index.js')))
     // Output HTML from pug
     .pipe(plugins.pug({ pretty: true }))
 
