@@ -17,7 +17,11 @@ const templatesTask = () => gulp.src(config.source)
     //     const test = fs.readFileSync('./app/src/data/index.js');
     //     console.log(test);
     // }))
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> f6a70c11809a1d79f45ffec44c615b0478f2fc9d
     // Only build changed files
     // .pipe(plugins.changed(config.dest, { extension: '.html' }))
 
@@ -39,13 +43,20 @@ const templatesTask = () => gulp.src(config.source)
 
     // Catch errors
     .on('error', errorHandler)
+    
+    // Call plumber to continue task on error
+    .pipe(plugins.plumber())
 
+<<<<<<< HEAD
     // Call plumber to continue task on error
     .pipe(plugins.plumber())
 
     // Pull in some data (ovverrides gulp locals)
     .pipe(plugins.data(() => requireUncached('../../app/src/data/site.js')))
 
+=======
+    .pipe(plugins.data(() => require('../../app/src/data/index.js')))
+>>>>>>> f6a70c11809a1d79f45ffec44c615b0478f2fc9d
     // Output HTML from pug
     .pipe(plugins.pug({ pretty: true }))
 
