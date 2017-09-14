@@ -71,6 +71,7 @@
     "webpack": "^3.0.0"
   },
   "dependencies": {
+    "gulp-plumber": "^1.1.0",
     "gulp-replace": "^0.6.1"
   }
 }

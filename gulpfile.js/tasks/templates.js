@@ -18,12 +18,17 @@ const templatesTask = () => gulp.src(config.source)
     .pipe(plugins.pugInheritance(config.pugInheritance))
 
     .on('error', errorHandler)
+    
+    .pipe(plugins.plumber())
 
     // Ignore build of files starting with _
     .pipe(plugins.filter(file => !/\/_/.test(file.path) && !/^_/.test(file.relative)))
 
     // Catch errors
     .on('error', errorHandler)
+
+    // Use gulp plumber to prevent a hanging watch-task on error
+    .pipe(plugins.plumber())
 
     // Output HTML from pug
     .pipe(plugins.pug({ pretty: true }))
