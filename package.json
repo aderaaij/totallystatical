@@ -1,6 +1,6 @@
 {
   "name": "totallystatical",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "A static site generator based on Gulp",
   "repository": {
     "type": "git",
