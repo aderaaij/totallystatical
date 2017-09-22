@@ -6,11 +6,11 @@ module.exports = {
         `${config.assetsPath}js/partials/*.js`,
         `${config.assetsPath}js/*.js`,
     ],
-    entries: {
+    entry: {
         script: [`${config.assetsPath}js/script.js`],
     },
-    dest: `${config.buildPath}assets/js`,
-    base: `${config.assetsPath}assets/js`,
+    dest: `${config.buildPath}assets/js/`,
+    base: `${config.assetsPath}js/`,
     extractSharedJs: true,
     concat: 'scripts.js',
     rename: {

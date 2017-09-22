@@ -9,9 +9,9 @@ const webpackExports = (env) => {
 
     const webpackConfig = {
         cache: false,
-        entry: config.entries,
+        entry: config.entry,
         output: {
-            path: path.resolve(__dirname, '../../app/build/assets/js/'),
+            path: path.resolve(config.dest),
             publicPath: '/js/',
             filename: filenamePattern,
         },
@@ -51,7 +51,16 @@ const webpackExports = (env) => {
                     NODE_ENV: JSON.stringify('production'),
                 },
             }),
-            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false,
+                    drop_console: true,
+                },
+                output: {
+                    comments: false,
+                    ascii_only: true,
+                },
+            }),
             new webpack.NoEmitOnErrorsPlugin(),
         );
     }
