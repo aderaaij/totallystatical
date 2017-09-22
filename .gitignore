@@ -1,8 +1,24 @@
+# Package managers #
+######################
 /node_modules
 /bower_components
-/app/build
-.sass-cache
-.DS_Store
 npm-debug.log
-Desktop.ini
+
+# Build Directory #
+######################
+/app/build/
+
+# Sensitive #
+######################
 .ftppass.json
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
