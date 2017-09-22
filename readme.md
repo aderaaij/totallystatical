@@ -68,7 +68,7 @@ Builds app with minified assets. Runs the following tasks:
 * [`webppack:production`](#scripts)
 * [`templates`](#templates)
 
-### watch 👀
+### 👀 watch 
 
 Run `gulp watch` to start webserver, watch files and livereload with browsersync. Uses the `gulp-watch` plugin to correctly handle new files while watching.
 
@@ -80,7 +80,7 @@ Runs the tasks:
 Uses:
 * `gulp-watch`
 
-### clean
+### 🗑 clean
 Deletes entire build folder.
 
 Plugins:
@@ -93,15 +93,20 @@ Plugins:
 * `gulp-images`
 * `gulp-changed`
 
-### svg:sprites
+### 👯 svg:sprites
 Create a SVG sprite from icons in the configured folder
 
 Plugins:
 * `gulp-images`
 * `gulp-svgstore`
 
-### webpack:watch
-Watches, prefixes, compiles, minifies and all the other magical JS things
+### 👀 webpack:watch
+Watches, prefixes, compiles, minifies and all the other magical JS things.
+* `webpack`
+* `babel-preset-env`
+
+### 👀 webpack:watch
+Prefixes, compiles, hashes, minifies and all the other magical JS things
 * `webpack`
 * `babel-preset-env`
 
@@ -118,15 +123,14 @@ Plugins:
 * `gulp-autoprefixer`
 * `gulp-if`
 
-
-### styles:production
+### 💃 styles:production
 Compile `/sass` to css and autoprefix. Doesn't minify as the css files will be rev'ed and minified after compilation.
 
 Plugins:
 * `gulp-sass`
 * `gulp-autoprefixer`
 
-### templates
+### 🐶 templates
 Generates html files from pug template. Every pug template prefixed with an underscore will not be built into a html file. To speed up the templating process `gulp-pug-inheritance` is used to check which template is dependent on which partial.
 
 Plugins:
@@ -136,7 +140,7 @@ Plugins:
 * `gulp-if`
 * `gulp-filter`
 
-### browsersync
+### ⚡️ browsersync
 Start browsersync server
 
 Plugins:
@@ -145,17 +149,17 @@ Plugins:
 ### ➡️👀 setwatch 
 Sets a global `isWatching` variable to `true`. Use to execute certain tasks, functions or configurations only when `gulp watch` is running.
 
-## Server
+## 💾 Server
 Start an express server on `localhost:5000` from the build folder. Convinient for checking out your production site
 
-## Bugs and to-do's
+## 🕷️🕸️ Bugs and to-do's
 
 * configure 'reving' of assets in a foolproof way
 * Add a build task without any revisioning / cache busting.
 * Create a data task: https://github.com/aderaaij/totallystatical/issues/6
 * Fix linking in a completely foolproof way: https://github.com/aderaaij/totallystatical/issues/4
 
-## Changelog
+## 🚨 Changelog
 
 ### v2.4.0
 **22/09/2017**
