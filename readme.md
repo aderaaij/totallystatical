@@ -7,7 +7,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * [Node]( https://nodejs.org/download/ )
 
 ## Installation:
-* run `npm install` to install all node dependencies
+* run `yarn install` to install all node dependencies
 * run `gulp` to build the app and start watching!
 * run `gulp build:production` to create a production build
 
@@ -19,9 +19,11 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
   * CSS minifying with [cssnano](http://cssnano.co/)
 * **🤓 Javascript**:
   * ES6 support with babel and webpack
+  * Easy babel presets with `babel-preset-env`: https://github.com/babel/babel-preset-env
   * Source maps
 * **🍕 Templating**:
-  * [Pug templating language](http://jade-lang.com/) with partials support
+  * [Pug templating language](https://pugjs.org/) with partials support
+  * Easy mixin for SVG sprite inclusion
 * **👩‍💻 Development**:
   * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
   * Source maps
@@ -30,7 +32,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
   * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
 * **📦 Sass Packages**:
   * Includes the following Sass packages by default:
-    * [Susy v2]( http://susy.oddbird.net/ )
+    * [Susy v3]( http://susy.oddbird.net/ )
     * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
     * [Breakpoint]( http://breakpoint-sass.com/ )
 * **📷 Images**:
@@ -40,14 +42,14 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * **🐍 Revisioning / cache busting**:
   Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
-## Usage 👩‍💻
+## 👩‍💻 Usage 
 Clone this package to a local folder and run `npm install` to install all the node dependencies.
 
 ### Development mode
 To start developing, run `gulp` from the terminal. This default command will build all your assets in development mode, starts the watch command and a browsersync server which is available on `127.0.0.1:3000`.
 
 ### Production
-Run `gulp build:production` to build your production app. This will build and minify your assets into the `/app/build` folder. This will also add a hash to your assets for cachebusting purposes.
+Run `gulp build:production` to build your production app. This will build and minify your assets into the `/app/build` folder. This will also add a hash to your assets for cachebusting purposes. You can run `gulp server` to start an express server from the buildfolder at anytime. 
 
 ### Deployment
 Run either `gulp deloy:ftp` or `gulp deply:sftp` to deploy through FTP or SFTP. To configure, create a `.ftppass.json` file in the root of your project(see `.ftppass-example`)  and fill in the right details. In either `/gulpfile.js/tasks/deployFTP` or `/gulpfile.js/tasks/deploySFTP`, rename the line `var ftppass = require('../../.ftppass-example')` to `var ftppass 			= require('../../.ftppass')` and deploy like the wind.
@@ -63,8 +65,7 @@ Builds app with minified assets. Runs the following tasks:
 * [`clean`](#clean)
 * [`images`](#images)
 * [`styles:production`](#stylesproduction)
-* [`scripts:standalone`](#scriptsstandalone)
-* [`scripts:production`](#scripts)
+* [`webppack:production`](#scripts)
 * [`templates`](#templates)
 
 ### watch 👀
@@ -85,7 +86,7 @@ Deletes entire build folder.
 Plugins:
 * `del` plugin
 
-### images 📷
+### 📷 images 
 Minifies images and distributes them to the build asset folder
 
 Plugins:
@@ -99,27 +100,17 @@ Plugins:
 * `gulp-images`
 * `gulp-svgstore`
 
-### scripts
-Concatenates, uglifies and distributes `.js` files to build folder.
-* `gulp-concat`
-* `gulp-rename`
-* `gulp-uglify`
-* `gulp-if`
+### webpack:watch
+Watches, prefixes, compiles, minifies and all the other magical JS things
+* `webpack`
+* `babel-preset-env`
 
-### scripts:standalone
-Distributes standalone scripts to the build folder. Use for modernizr or other scripts that should be included standalone.
-
-Plugins:
-* `gulp-changed`
-
-### styles 💃
-Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In the corresponding config file it's possible to define node modules with `includePaths` to easily define them with `@imports` in your .scss file. By default, the following paths are added"
+### 💃 styles 
+Compile `/sass` folder to css, autoprefix and add sourcemaps for debugging. In the corresponding config file it's possible to define node modules with `includePaths` to easily define them with `@imports` in your .scss file. By default, the following paths are added:
 
 * `./node_modules/normalize-scss/sass/`
 * `./node_modules/susy/sass/`
 * `./node_modules/breakpoint-sass/stylesheets/`
-
-Images should be added with the following path: `../../assets/img/test.jpg` due to some unfixed misconfiguration with the rev'ing (see Bugs and Todo's)
 
 Plugins:
 * `gulp-sass`
@@ -134,7 +125,6 @@ Compile `/sass` to css and autoprefix. Doesn't minify as the css files will be r
 Plugins:
 * `gulp-sass`
 * `gulp-autoprefixer`
-* `gulp-rename`
 
 ### templates
 Generates html files from pug template. Every pug template prefixed with an underscore will not be built into a html file. To speed up the templating process `gulp-pug-inheritance` is used to check which template is dependent on which partial.
@@ -152,13 +142,18 @@ Start browsersync server
 Plugins:
 * `browser-sync`
 
-### setwatch ➡️👀
+### ➡️👀 setwatch 
 Sets a global `isWatching` variable to `true`. Use to execute certain tasks, functions or configurations only when `gulp watch` is running.
+
+## Server
+Start an express server on `localhost:5000` from the build folder. Convinient for checking out your production site
 
 ## Bugs and to-do's
 
-* Fix reference to background images / revisioned assets
+* configure 'reving' of assets in a foolproof way
 * Add a build task without any revisioning / cache busting.
+* Create a data task: https://github.com/aderaaij/totallystatical/issues/6
+* Fix linking in a completely foolproof way: https://github.com/aderaaij/totallystatical/issues/4
 
 ## Changelog
 
