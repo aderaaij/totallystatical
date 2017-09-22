@@ -4,9 +4,7 @@ const config = require('../config/svgSprite');
 
 const SVGSprite = () => gulp.src(config.source)
 
-    .pipe(plugins.imagemin({
-        svgoPlugins: [{ removeTitle: true }],
-    }))
+    .pipe(plugins.imagemin(config.pluginConfig))
 
     .pipe(plugins.svgstore())
 
