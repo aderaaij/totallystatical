@@ -105,7 +105,7 @@ Watches, prefixes, compiles, minifies and all the other magical JS things.
 * `webpack`
 * `babel-preset-env`
 
-### 👀 webpack:watch
+### 👀 webpack:production
 Prefixes, compiles, hashes, minifies and all the other magical JS things
 * `webpack`
 * `babel-preset-env`
