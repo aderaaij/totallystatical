@@ -166,9 +166,9 @@ Sets a global `isWatching` variable to `true`. Use to execute certain tasks, fun
 **22/09/2017**
 * ⚒ Switched the `babel-preset-2015`, etc. for `babel-preset-env` which makes it way easier to compile for specific browsers. See https://github.com/babel/babel-preset-env
 * ⚒ Added presets to the webpack `UglifyJsPlugin`. Now removes `console.log` calls and comments (might have removed comments before, I'm not sure)
-* ⚒ Removed the 'standalone scripts' task, as it was weird running scripts through two different compilers. Webpack doesn't support multiple outputs out of the box, but luckily there's a way around this: https://stackoverflow.com/a/45278943/4474075. Easy to configure in the `gulpfile.js/config/scripts.js` file. 
+* ⚒ Removed the 'standalone scripts' task, as it was weird running scripts through two different compilers. This should be done with webpack instead. Webpack doesn't support multiple outputs out of the box, but luckily there's a way around this: https://stackoverflow.com/a/45278943/4474075. Easy to configure in the `gulpfile.js/config/scripts.js` file. 
 * ⚒ Removed unused packages
-* ⚒ Cleaned up the gulpfile task and config
+* ⚒ Cleaned up the gulpfile tasks and config files
 
 ### v2.3.2
 **10/09/2017**
