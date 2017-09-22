@@ -7,7 +7,6 @@ const buildProduction = (cb) => {
         [
             'images',
             'svg:sprite',
-            'scripts:standalone',
         ],
         [
             'styles:production',

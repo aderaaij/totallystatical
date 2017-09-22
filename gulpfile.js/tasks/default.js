@@ -8,10 +8,7 @@ const defaultTask = (cb) => {
             'images',
             'svg:sprite',
         ],
-        [
-            'scripts:standalone',
-            'styles',
-        ],
+        'styles',
         'watch',
         cb,
     );
