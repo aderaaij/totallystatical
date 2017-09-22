@@ -57,10 +57,10 @@ Run either `gulp deloy:ftp` or `gulp deply:sftp` to deploy through FTP or SFTP. 
 ## Tasks
 All tasks are defined in `gulpfile.js/tasks`. Most tasks have a corresponding config file in `gulpfile.js/config`. Some share a config file and some just use `gulpfile.js/index.js`
 
-### default
+### 🏃🏽‍ default
 Cleans, builds app and enables watch tasks
 
-### build:production
+### 🏗️ build:production
 Builds app with minified assets. Runs the following tasks:
 * [`clean`](#clean)
 * [`images`](#images)
