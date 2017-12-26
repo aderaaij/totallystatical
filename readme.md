@@ -12,7 +12,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 * run `gulp` to build the app and start watching!
 * run `gulp build:production` to create a production build
 
-## Features:
+## Features
 
 * **💃 Sass/CSS**:
   * Blazing fast Node Sass(libsass) parser
@@ -100,7 +100,7 @@ Plugins:
 
 * `del` plugin
 
-### 📷 images 
+### 📷 images
 
 Minifies images and distributes them to the build asset folder
 
@@ -193,13 +193,21 @@ Start an express server on `localhost:5000` from the build folder. Convinient fo
 
 ## 🚨 Changelog
 
+### v2.4.1
+
+#### 26/12/2017
+
+* ⚒ Update packages
+  * `gulp-imagemin`: 3.* - 4.*
+  * `imagemin-svgo`: 5.* - 6.*
+
 ### v2.4.0
 
 #### 22/09/2017
 
-* ⚒ Switched the `babel-preset-2015`, etc. for `babel-preset-env` which makes it way easier to compile for specific browsers. See https://github.com/babel/babel-preset-env
+* ⚒ Switched the `babel-preset-2015`, etc. for [`babel-preset-env`](https://github.com/babel/babel-preset-env) which makes it way easier to compile for specific browsers.
 * ⚒ Added presets to the webpack `UglifyJsPlugin`. Now removes `console.log` calls and comments (might have removed comments before, I'm not sure)
-* ⚒ Removed the 'standalone scripts' task, as it was weird running scripts through two different compilers. This should be done with webpack instead. Webpack doesn't support multiple outputs out of the box, but luckily there's a way around this: https://stackoverflow.com/a/45278943/4474075. Easy to configure in the `gulpfile.js/config/scripts.js` file. 
+* ⚒ Removed the 'standalone scripts' task, as it was weird running scripts through two different compilers. This should be done with webpack instead. Webpack doesn't support multiple outputs out of the box, but [luckily there's a way around this](https://stackoverflow.com/a/45278943/4474075). Easy to configure in the `gulpfile.js/config/scripts.js` file.
 * ⚒ Removed unused packages
 * ⚒ Cleaned up the gulpfile tasks and config files
 
@@ -207,13 +215,13 @@ Start an express server on `localhost:5000` from the build folder. Convinient fo
 
 #### 10/09/2017 - 2
 
-* ⚒ Add `gulp-plumber` to template task to ensure watch task doesn't hang on error. 
+* ⚒ Add `gulp-plumber` to template task to ensure watch task doesn't hang on error.
 
 ### v2.3.1
 
 #### 10/09/2017
 
-* ⚒ Fix assetpath in background images for paths without `url()`. 
+* ⚒ Fix assetpath in background images for paths without `url()`.
 
 ### v2.3.0
 
@@ -265,8 +273,8 @@ Bumped the version to 2.0 as I did some major updates on the plugins/components
 
 ## Credits
 
-Much credit goes out to the [gulp-starter repo](https://github.com/vigetlabs/gulp-starter) from Viget Labs(https://github.com/vigetlabs/).
+Much credit goes out to the [gulp-starter repo](https://github.com/vigetlabs/gulp-starter) from [Viget Labs](https://github.com/vigetlabs/).
 
 ## Licensing
 
-Copyright (c) 2015 - 2016 Arden de Raaij. Licensed under the [MIT license(MIT)](https://opensource.org/licenses/MIT)
+Copyright (c) 2015 - 2017 Arden de Raaij. Licensed under the [MIT license(MIT)](https://opensource.org/licenses/MIT)
