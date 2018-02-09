@@ -4,7 +4,7 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 
 ## Requirements
 
-* [Node 8.* or higher]( https://nodejs.org/download/ )
+* [Node 8.\* or higher](https://nodejs.org/download/)
 
 ## Installation
 
@@ -15,32 +15,32 @@ A barebone static site generator / rapid prototyping tool leveraging the awesome
 ## Features
 
 * **💃 Sass/CSS**:
-  * Blazing fast Node Sass(libsass) parser
-  * Sass Sourcemaps for development
-  * CSS prefixing with [autoprefixer](https://github.com/postcss/autoprefixer)
-  * CSS minifying with [cssnano](http://cssnano.co/)
+    * Blazing fast Node Sass(libsass) parser
+    * Sass Sourcemaps for development
+    * CSS prefixing with [autoprefixer](https://github.com/postcss/autoprefixer)
+    * CSS minifying with [cssnano](http://cssnano.co/)
 * **🤓 Javascript**:
-  * ES6 support with babel and webpack
-  * Easy babel presets with `babel-preset-env`: https://github.com/babel/babel-preset-env
-  * Source maps
+    * ES6 support with babel and webpack
+    * Easy babel presets with `babel-preset-env`: https://github.com/babel/babel-preset-env
+    * Source maps
 * **🍕 Templating**:
-  * [Pug templating language](https://pugjs.org/) with partials support
-  * Easy mixin for SVG sprite inclusion
+    * [Pug templating language](https://pugjs.org/) with partials support
+    * Easy mixin for SVG sprite inclusion
 * **👩‍💻 Development**:
-  * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
-  * Source maps
+    * File watching and livereloading synchronized across multiple browsers/devices with [BrowserSync](https://www.browsersync.io/)
+    * Source maps
 * **🚀 Deployment**:
-  * Blazing fast FTP deploys with [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)
-  * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
+    * Blazing fast FTP deploys with [vinyl-ftp](https://www.npmjs.com/package/vinyl-ftp)
+    * SFTP deployment with [gulp-sftp](https://www.npmjs.com/package/vinyl-ftp)
 * **📦 Sass Packages**:
-  * Includes the following Sass packages by default:
-    * [Susy v3]( http://susy.oddbird.net/ )
-    * [Normalize]( https://github.com/JohnAlbin/normalize-scss )
-    * [Breakpoint]( http://breakpoint-sass.com/ )
+    * Includes the following Sass packages by default:
+        * [Susy v3](http://susy.oddbird.net/)
+        * [Normalize](https://github.com/JohnAlbin/normalize-scss)
+        * [Breakpoint](http://breakpoint-sass.com/)
 * **📷 Images**:
-  * Image minifying with imagemin
-  * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
-  * Easy Pug mixin to create `<use>` code for SVG sprite icons
+    * Image minifying with imagemin
+    * Compiles SVG sprites from all SVG files in the `assets/sprite` directory
+    * Easy Pug mixin to create `<use>` code for SVG sprite icons
 * **🐍 Revisioning / cache busting**:
   Cache busting static assets for production with [gulp-rev](https://github.com/sindresorhus/gulp-rev)
 
@@ -54,11 +54,11 @@ To start developing, run `gulp` from the terminal. This default command will bui
 
 ### Production
 
-Run `gulp build:production` to build your production app. This will build and minify your assets into the `/app/build` folder. This will also add a hash to your assets for cachebusting purposes. You can run `gulp server` to start an express server from the buildfolder at anytime. 
+Run `gulp build:production` to build your production app. This will build and minify your assets into the `/app/build` folder. This will also add a hash to your assets for cachebusting purposes. You can run `gulp server` to start an express server from the buildfolder at anytime.
 
 ### Deployment
 
-Run either `gulp deloy:ftp` or `gulp deply:sftp` to deploy through FTP or SFTP. To configure, create a `.ftppass.json` file in the root of your project(see `.ftppass-example`)  and fill in the right details. In either `/gulpfile.js/tasks/deployFTP` or `/gulpfile.js/tasks/deploySFTP`, rename the line `var ftppass = require('../../.ftppass-example')` to `var ftppass 			= require('../../.ftppass')` and deploy like the wind.
+Run either `gulp deloy:ftp` or `gulp deply:sftp` to deploy through FTP or SFTP. To configure, create a `.ftppass.json` file in the root of your project(see `.ftppass-example`) and fill in the right details. In either `/gulpfile.js/tasks/deployFTP` or `/gulpfile.js/tasks/deploySFTP`, rename the line `var ftppass = require('../../.ftppass-example')` to `var ftppass = require('../../.ftppass')` and deploy like the wind.
 
 ## Tasks
 
@@ -193,13 +193,17 @@ Start an express server on `localhost:5000` from the build folder. Convinient fo
 
 ## 🚨 Changelog
 
+### v2.5.0
+
+* 🛠 Updated packages
+
 ### v2.4.1
 
 #### 26/12/2017
 
 * ⚒ Update packages
-  * `gulp-imagemin`: 3.* - 4.*
-  * `imagemin-svgo`: 5.* - 6.*
+    * `gulp-imagemin`: 3._ - 4._
+    * `imagemin-svgo`: 5._ - 6._
 
 ### v2.4.0
 
